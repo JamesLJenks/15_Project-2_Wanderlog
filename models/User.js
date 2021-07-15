@@ -1,22 +1,35 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
+// still in the works
 
 class User extends Model {}
 
-Campgroud.init(
+Campgroud_post.init(
   {
-    title: {
-      type: DataTypes.STRING
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
-    author: {
-      type: DataTypes.STRING
-    }
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isAlphanumeric: true,
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
   },
   {
-
     sequelize,
-
     timestamps: true,
     underscored: true,
     modelName: 'user'

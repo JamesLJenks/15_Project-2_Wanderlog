@@ -2,20 +2,14 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 
-class User extends Model {}
+class Campground_checklist extends Model {}
 
-Campgroud_post.init(
+Campgroud_checklist.init(
   {
-    firstName: {
+    name: {
       type: DataTypes.STRING
     },
-    lastName: {
-      type: DataTypes.STRING
-    },
-    username: {
-      type: DataTypes.STRING
-    },
-    password: {
+    icon: {
       type: DataTypes.STRING
     },
   },
@@ -23,8 +17,8 @@ Campgroud_post.init(
     sequelize,
     timestamps: true,
     underscored: true,
-    modelName: 'user'
+    modelName: 'campground_checklist'
   }
 );
 
-module.exports = User;
+module.exports = Campground_checklist;
