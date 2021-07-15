@@ -1,11 +1,36 @@
 {
-  "dependencies": {
-    "connect-session-sequelize": "^7.1.1",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.3.2",
-    "express-session": "^1.17.2",
-    "mysql2": "^2.2.5",
-    "sequelize": "^6.6.5"
-  }
+    "name": "wanderlog",
+    "version": "1.0.0",
+    "description": "campground & trail guestbook",
+    "main": "server.js",
+    "scripts": {
+        "test": "jest",
+        "start": "node server.js",
+        "watch": "nodemon server.js",
+        "seed": "node seeds/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/JamesLJenks/15_Project-2_Wanderlog"
+    },
+    "author": "Jay L Jenks, Bryan Bentz, Jane Rapley, Ella Kramer, Stephen Moore",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/JamesLJenks/15_Project-2_Wanderlog/issues"
+    },
+    "homepage": "https://github.com/JamesLJenks/15_Project-2_Wanderlog#readme",
+    "dependencies": {
+        "bcrypt": "^5.0.0",
+        "connect-session-sequelize": "^6.1.1",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-handlebars": "^4.0.4",
+        "express-session": "^1.17.1",
+        "mysql2": "^2.1.0",
+        "sequelize": "^5.22.4"
+    },
+    "devDependencies": {
+        "jest": "^26.4.2",
+        "nodemon": "^2.0.4"
+    }
 }
