@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Adventure - draft</title>
+</head>
+
+<body>
+    <header>
+        <img class="logoSmall" src="" alt="">
+        <div class="input-group rounded">
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon">
+                <i class="fas fa-search"></i>
+            </span>
+        </div>
+        <button type="button" class="btn btn-outline-secondary">Your Wanderlog</button>
+        <button type="button" class="btn btn-outline-secondary">Dropdown Menu</button>
+        <button type="button" class="btn btn-primary btn-lg">+ Add New Adventure</button>
+    </header>
+
+    <h1>Your Camping Adventure</h1>
+
+    <h2>Draft | Publish</h2>
+        <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        </label>
+
+    <h2>Date</h2>
+        <section>
+            <input type="date" id="begin-date">to<input type="date" id="end-date">
+            </section>
+
+    <h2>City, State</h2>
+        <div class="input-group">
+  <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="City">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">State</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Alabama</a>
+      <a class="dropdown-item" href="#">Alaska</a>
+      <a class="dropdown-item" href="#">Arizona</a>
+      <div role="separator" class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Arkansas</a>
+    </div>
+  </div>
+</div>
+<!-- Is there a more efficient way to do the state dropdown menu?-->
+
+    
+    <h2>Checklist</h2>
+    <section class="checklist">
+        <!-- icons-->
+    </section>
+
+    <h2>Comfort</h2>
+        <section>
+            <input type="checkbox" id="comfort-lvl">
+        </section>
+
+    <h2>Title Your Adventure</h2>
+        <section>
+            <input type="text" id="title" placeholder="Title">
+        </section>
+
+</body>
+
+</html>
