@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wanderlog</title>
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  {{!-- Add Bootstrap and any global CSS --}}
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+
+<body class="flex-column min-100-vh">
+  <nav class="navbar">
+    <a href="/"><img src="/public/assets/w-logo" alt="Wanderlog Logo" href="/homepage"></a>
+    <div class="input-group rounded">
+            <input type="search" class="form-control rounded" placeholder="Search the Wanderlog" aria-label="Search"
+                aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon">
+                <i class="fas fa-search"></i>
+            </span>
+        </div>
+    <ul class="flex-row">
+      {{!-- <li class="li-inline nav-item"><a href="/dashboard">Account</a></li> --}}
+      <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
+    </ul>
+    <a href="/dashboard/new"><button type="button" class="btn btn-primary btn-lg add-new-adventure-button">➕ Add New Adventure</button></a>
+  </nav>
+
+  <main class="col-auto">
+    {{{body}}}
+  </main>
+
+  <footer class="footer flex-row justify-center">
+  </footer>
+</body>
+
+<script src="/js/logout.js"></script>
+
+</html>
