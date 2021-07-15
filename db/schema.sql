@@ -29,13 +29,6 @@ CREATE TABLE trail_checklist (
 CREATE TABLE campground_post (
     post_id NOT NULL AUTO_INCREMENT,
     -- creator NOT NULL, -- join to user database
-    created TIMESTAMP,
-    published BOOLEAN NOT NULL, 
-    trip_start DATE NULL,
-    trip_end DATE NULL,
-    campground_name VARCHAR(255) NOT NULL,
-    location_city VARCHAR(255) NOT NULL,
-    location_state VARCHAR(60) NOT NULL,
     -- join campground_checklist here
     comfort VARCHAR(2) NULL,
     title varchar(255) NOT NULL,
