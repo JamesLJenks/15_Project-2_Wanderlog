@@ -34,10 +34,8 @@ Campgroud_post.init(
       type: DataTypes.STRING
     },
   },
-  
   {
     sequelize,
-
     timestamps: true,
     underscored: true,
     modelName: 'campground_post'

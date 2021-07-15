@@ -4,9 +4,7 @@ CREATE DATABASE wanderlog_db;
 USE wanderlog_db;
 
 CREATE TABLE user (
-    id NOT NULL AUTO_INCREMENT,
-    first_name VARCHAR(60) NOT NULL,
-    last_name VARCHAR(60) NOT NULL,
+
     password VARCHAR(256) NOT NULL,
 
 )
@@ -27,13 +25,8 @@ CREATE TABLE trail_checklist (
 
 -- table for campground posts
 CREATE TABLE campground_post (
-    post_id NOT NULL AUTO_INCREMENT,
     -- creator NOT NULL, -- join to user database
     -- join campground_checklist here
-    comfort VARCHAR(2) NULL,
-    title varchar(255) NOT NULL,
-    user_story VARCHAR(600) NOT NULL,
-    PRIMARY KEY (post_id)
 )
 
 CREATE TABLE trail_post (
