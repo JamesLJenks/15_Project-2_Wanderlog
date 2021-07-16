@@ -17,3 +17,7 @@ input[type="text"]::placeholder {
     text-align: center;
     color: #BC6C25;
 }
+
+.checked {
+    color: #BC6C25;
+}

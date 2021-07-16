@@ -1,73 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Adventure - draft</title>
-</head>
-
-<body>
-    <header>
-        <img class="logoSmall" src="" alt="">
-        <div class="input-group rounded">
-            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                aria-describedby="search-addon" />
-            <span class="input-group-text border-0" id="search-addon">
-                <i class="fas fa-search"></i>
-            </span>
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <h1>Your Camping Adventure</h1>
         </div>
-        <button type="button" class="btn btn-outline-secondary">Your Wanderlog</button>
-        <button type="button" class="btn btn-outline-secondary">Dropdown Menu</button>
-        <button type="button" class="btn btn-primary btn-lg">+ Add New Adventure</button>
-    </header>
-
-    <h1>Your Camping Adventure</h1>
-
-    <h2>Draft | Publish</h2>
-        <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-        </label>
-
-    <h2>Date</h2>
-        <section>
-            <input type="date" id="begin-date">to<input type="date" id="end-date">
-            </section>
-
-    <h2>City, State</h2>
-        <div class="input-group">
-  <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="City">
-  <div class="input-group-append">
-    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">State</button>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Alabama</a>
-      <a class="dropdown-item" href="#">Alaska</a>
-      <a class="dropdown-item" href="#">Arizona</a>
-      <div role="separator" class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Arkansas</a>
+        <div class="col-2"></div>
     </div>
-  </div>
 </div>
-<!-- Is there a more efficient way to do the state dropdown menu?-->
 
-    
-    <h2>Checklist</h2>
-    <section class="checklist">
-        <!-- icons-->
-    </section>
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <form class="camp-form">
+                {{!-- Post Title --}}
+                <div class="form-group camp-post-title">
+                    <label>Title Your Adventure!</label>
+                    <input type="text" class="form-control" placeholder="Title">
+                </div>
 
-    <h2>Comfort</h2>
-        <section>
-            <input type="checkbox" id="comfort-lvl">
-        </section>
+                {{!-- Campground Name --}}
+                <div class="form-group campground-name">
+                    <label>Campground Name</label>
+                    <input type="text" class="form-control" placeholder="Campground">
+                </div>
 
-    <h2>Title Your Adventure</h2>
-        <section>
-            <input type="text" id="title" placeholder="Title">
-        </section>
+                {{!-- Datepicker --}}
+                <div>
+                    {{!-- Insert Datepicker --}}
+                </div>
 
-</body>
+                <div class="form-row">
+                    {{!-- City --}}
+                    <div class="col-md-6 mb-3">
+                        <label>City</label>
+                        <input type="text" class="form-control" id="camp-post-city" placeholder="City" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    {{!-- State --}}
+                    <div class="col-md-3 mb-3">
+                        <label for="validationCustom04">State</label>
+                        <input type="text" class="form-control" id="camp-post-state" placeholder="State" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid state.
+                        </div>
+                    </div>
 
-</html>
+                    {{!-- Camp Checkboxes --}}
+                    <div class="camp-checkboxes">
+                        {{!-- Terrain --}}
+                        <div class="camp-terrain">
+                            <h3>Terrain</h3>
+                            <div class="form-check">
+                                {{!-- Forest --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-forest">
+                                <label class="form-check-label" for="defaultCheck1">Forest</label>
+                                {{!-- Water --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-water">
+                                <label class="form-check-label" for="defaultCheck1">Water</label>
+                                {{!-- Water --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-beach">
+                                <label class="form-check-label" for="defaultCheck1">Beach</label>
+                            </div>
+                        </div>
+                        {{!-- Amenities --}}
+                        <div class="camp-amenities">
+                            <h3>Amenities</h3>
+                            <div class="form-check">
+                                {{!-- Forest --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-forest">
+                                <label class="form-check-label" for="defaultCheck1">Forest</label>
+                                {{!-- Water --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-water">
+                                <label class="form-check-label" for="defaultCheck1">Water</label>
+                                {{!-- Water --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-beach">
+                                <label class="form-check-label" for="defaultCheck1">Beach</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {{!-- Comfort --}}
+                    <div>
+                        <h2>Comfort</h2>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+
+                    {{!-- Post Body --}}
+                    <div>
+                        {{!-- Use Quilljs: HTML, CSS, JS, Install dependencies --}}
+                    </div>
+
+                    {{!-- Post Thumbnail Upload --}}
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Upload a Feature Image</label>
+                        <input type="file" class="form-control-file" id="camp-feature-image">
+                    </div>
+
+                    {{!-- Submit Form --}}
+                    <button type="submit" id="camp-form-submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
