@@ -14,24 +14,28 @@
         <div class="col-8">
             <form class="camp-form">
                 {{!-- Post Title --}}
+                <h2>Title Your Adventure!</h2>
                 <div class="form-group camp-post-title">
-                    <label>Title Your Adventure!</label>
                     <input type="text" class="form-control" placeholder="Title">
                 </div>
 
                 {{!-- Campground Name --}}
+                <h2>Campground Name</h2>
                 <div class="form-group campground-name">
-                    <label>Campground Name</label>
                     <input type="text" class="form-control" placeholder="Campground">
                 </div>
 
                 {{!-- Datepicker --}}
+                <h2>Date Range</h2>
                 <div>
                     {{!-- Insert Datepicker --}}
                 </div>
 
+                {{!-- Location --}}
+                <h2>Location</h2>
                 <div class="form-row">
                     {{!-- City --}}
+                    <h2>Location</h2>
                     <div class="col-md-6 mb-3">
                         <label>City</label>
                         <input type="text" class="form-control" id="camp-post-city" placeholder="City" required>
@@ -49,6 +53,7 @@
                     </div>
 
                     {{!-- Camp Checkboxes --}}
+                    <h2>Campground Checklist</h2>
                     <div class="camp-checkboxes">
                         {{!-- Terrain --}}
                         <div class="camp-terrain">
@@ -83,8 +88,8 @@
                     </div>
                     
                     {{!-- Comfort --}}
-                    <div>
-                        <h2>Comfort</h2>
+                    <h2>Campground Comfort</h2>
+                    <div id="camp-comfort-rating">
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
