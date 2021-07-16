@@ -12,12 +12,6 @@
     transition: 0.3s;
 }
 
-input[type="text"]::placeholder {                 
-    /* Firefox, Chrome, Opera */
-    text-align: center;
-    color: #BC6C25;
-}
-
 .checked {
     color: #BC6C25;
 }

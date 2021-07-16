@@ -1,0 +1,48 @@
+/* Adobe Typekit Web Fonts */
+@import url("https://use.typekit.net/jnf7bws.css");
+
+body {
+    overflow-x: hidden;
+    font-family: nimbus-sans, sans-serif;
+}
+
+.landing-page-content {
+    position: absolute;
+    width: 100vw;
+}
+
+.video-background {
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(00, 0, 0, 0.6);
+}
+
+.custom-btn {
+    background-color: #00aba7;
+    border: none;
+}
+
+.custom-btn:hover {
+    background-color: #006160;
+    border: none;
+    transform: scale(1.025);
+    transition: 0.3s;
+}
+
+.custom-btn:active {
+    background-color: #006160;
+    border: none;
+}
+
+input[type="text"]::placeholder {                 
+    /* Firefox, Chrome, Opera */
+    text-align: center;
+    color: #BC6C25;
+}
+
+h1 {
+    font-family: pauline, sans-serif;
+    font-weight: bold;
+    font-size: 4rem;
+}
