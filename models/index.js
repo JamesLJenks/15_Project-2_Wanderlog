@@ -1,5 +1,3 @@
-const { Model } = require("sequelize/types");
-
 const CampgroundChecklist = require('Campground_checklist');
 const CampgroundPost = require('Campground_post');
 const Comment = require('Comment');
