@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
+const Campground_post = require('./Campground_post');
 
 // create our User model
 class User extends Model {
@@ -23,6 +24,14 @@ User.init(
         primaryKey: true,
         // turn on auto increment
         autoIncrement: true
+    },
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     // define a username column
     username: {
@@ -52,7 +61,19 @@ User.init(
         async beforeUpdate(updatedUserData) {
             updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
             return updatedUserData;
+        },
+        // define a password column 
+        associate: models => {
+          // 1 to many with campground_post
+          User.hasMany(models.Campground_post, {
+            foreignKey: 'creator',
+          });
+          return Campground_post;
+
         }
+        
+
+    
     },
     // TABLE CONFIGURATION OPTIONS GO HERE (https://sequelize.org/v5/manual/models-definition.html#configuration))
 

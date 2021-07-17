@@ -45,6 +45,13 @@ Campgroud_post.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    associate: models => {
+      // 1 to many with campground_checklist
+      User.hasMany(models.Campground_checklist, {
+        foreignKey: 'checklist',
+      });
+      return Campground_checklist;
+    }
   },
   {
     sequelize,
