@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
+<!-- header section covered in shared-layout handlebar file
 <body>
     <header>
         <img class="logoSmall" src="" alt="">
@@ -22,60 +22,67 @@
         <button type="button" class="btn btn-outline-secondary">Dropdown Menu</button>
         <button type="button" class="btn btn-primary btn-lg">+ Add New Adventure</button>
     </header>
-
-    <section class="thumbnailPicture">
-        <!-- thumbnail picture here (align to left) -->
-    </section>
-
-    <section class="checklist">
-        <!-- info section here (trail checklist) align to left-->
-    </section>
-
-    <section>
-        <h1>Post Title</h1>
-        <p>Date Range | Trail Name | City, State</p>
-        <!-- button or toggle switch here for draft/publish -->
-        <p>Experience Level | Trail Difficulty | Trail Length</p>
-    </section>
-
-    <section>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quas sint odit reprehenderit natus,
-            provident dicta sed maxime veritatis nulla laborum a minima, id eos totam necessitatibus doloremque
-            recusandae voluptas.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident alias beatae voluptate vitae dicta ex
-            atque a dolorum ipsa obcaecati, nobis sunt molestias itaque nemo, maxime dolores adipisci delectus quasi?
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, iste officiis quaerat aperiam ex natus
-            error, nam a, voluptates provident asperiores cumque accusamus quam laudantium ea. Vero obcaecati optio
-            earum?
-        </p>
-    </section>
-
-    <section>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">User Name</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Date</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
+ -->
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-4">
+                    <!-- thumbnail here -->
+                </div>
+                <div class="col-8">
+                    <h1>User Post Title</h1>
+                    <p>Date Range | Trail Name | City, State</p>
+                    <p>Published by on 00/00/0000</p>
+                    <!-- button or toggle switch here for draft/publish -->
+                    <p>Comfort Scale *rating insert here*</p>
+                </div>
             </div>
         </div>
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">User Name</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Date</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-            </div>
-        </div>  <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">User Name</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Date</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
+    </div>
+
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-4">
+                    <div class="trailChecklist">
+                        <!-- info section here (trail checklist) align to left-->
+                    </div>
+                    <div class="col-8">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quas sint odit
+                            reprehenderit natus,
+                            provident dicta sed maxime veritatis nulla laborum a minima, id eos totam necessitatibus
+                            doloremque
+                            recusandae voluptas.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident alias beatae
+                            voluptate
+                            vitae dicta ex
+                            atque a dolorum ipsa obcaecati, nobis sunt molestias itaque nemo, maxime dolores
+                            adipisci
+                            delectus quasi?
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, iste officiis quaerat
+                            aperiam ex natus
+                            error, nam a, voluptates provident asperiores cumque accusamus quam laudantium ea. Vero
+                            obcaecati optio
+                            earum?
+                        </p>
+                        {{#each comment}}
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">User Name</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Date</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up
+                                    the
+                                    bulk of the
+                                    card's content.</p>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-
-</body>
 
 </html>

@@ -1,0 +1,17 @@
+@import url("https://use.typekit.net/jnf7bws.css");
+
+.custom-btn {
+    background-color: #00aba7;
+    border: none;
+}
+
+.custom-btn:hover {
+    background-color: #006160;
+    border: none;
+    transform: scale(1.025);
+    transition: 0.3s;
+}
+
+.checked {
+    color: #BC6C25;
+}

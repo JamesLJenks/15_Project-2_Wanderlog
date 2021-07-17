@@ -1,0 +1,272 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <h1>Your Trail Quest</h1>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <form class="trail-form">
+                {{!-- Post Title --}}
+                <h2>Title Your Trail Quest</h2>
+                <div class="form-group camp-post-title">
+                    <input type="text" class="form-control" placeholder="Title">
+                </div>
+
+                {{!-- Trail Name --}}
+                <h2>Trail Name</h2>
+                <div class="form-group trail-name">
+                    <input type="text" class="form-control" placeholder="Trail">
+                </div>
+
+                {{!-- Datepicker --}}
+                <h2>Date Range</h2>
+                <div>
+                    {{!-- Insert Datepicker --}}
+                </div>
+
+                {{!-- Location --}}
+                <h2>Location</h2>
+                <div class="form-row">
+                    {{!-- City --}}
+                    <div class="col-md-6 mb-3">
+                        <label>City</label>
+                        <input type="text" class="form-control" id="trail-post-city" placeholder="City" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    {{!-- State --}}
+                    <div class="col-md-3 mb-3">
+                        <label for="validationCustom04">State</label>
+                        <input type="text" class="form-control" id="trail-post-state" placeholder="State" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid state.
+                        </div>
+                    </div>
+
+                    {{!-- Trail Checkboxes --}}
+                    <h2>Trail Checklist</h2>
+                    <div class="trail-checkboxes">
+                        {{!-- Accessories --}}
+                        <div class="trail-accessories">
+                            <h3>Reccommended Accessories</h3>
+                            <div class="form-check">
+                                {{!-- Sunscreen --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-sunscreen">
+                                <label class="form-check-label" for="defaultCheck1">Sunscreen</label>
+                                {{!-- Bug Spray --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-bug-spray">
+                                <label class="form-check-label" for="defaultCheck1">Bug Spray</label>
+                                {{!-- Water Bottle--}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-water-bottle">
+                                <label class="form-check-label" for="defaultCheck1">Water Bottle</label>
+                                 {{!-- Boots --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-boots">
+                                <label class="form-check-label" for="defaultCheck1">Boots</label>
+                                {{!-- Rain Jacket --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-rain-jacket">
+                                <label class="form-check-label" for="defaultCheck1">Rain Jacket</label>
+                                {{!-- Cleats --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-cleats">
+                                <label class="form-check-label" for="defaultCheck1">Cleats</label>
+                                {{!-- Climbing Rope --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-climbing-rope">
+                                <label class="form-check-label" for="defaultCheck1">Climbing Rope</label>
+                                {{!-- Bear Spray --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-bear-spray">
+                                <label class="form-check-label" for="defaultCheck1">Bear Spray</label>
+                            </div>
+                        </div>
+                        {{!-- Vehicle Accessibility --}}
+                        <div class="trail-vehicle-accessibility">
+                            <h3>Vehicle Accessibility</h3>
+                            <div class="form-check">
+                                {{!-- ORV --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-ORV">
+                                <label class="form-check-label" for="defaultCheck1">ORV</label>
+                                {{!-- ATV --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-ATV">
+                                <label class="form-check-label" for="defaultCheck1">ATV</label>
+                                {{!-- Snowmobile --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-snowmobile">
+                                <label class="form-check-label" for="defaultCheck1">Snowmobile</label>
+                            </div>
+                        </div>
+                         {{!-- Accessibility --}}
+                        <div class="trail-accessibility">
+                            <h3>Accessibility</h3>
+                            <div class="form-check">
+                                {{!-- Trail Side Camping --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-side-camping">
+                                <label class="form-check-label" for="defaultCheck1">Trail Side Camping</label>
+                                {{!-- Bathroom --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-bathroom">
+                                <label class="form-check-label" for="defaultCheck1">Bathrooms</label>
+                                {{!-- Water Fountain --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-water-fountain">
+                                <label class="form-check-label" for="defaultCheck1">Water Fountain</label>
+                                {{!-- Pet Friendly --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-pet-friendly">
+                                <label class="form-check-label" for="defaultCheck1">Pet Friendly</label>
+                                {{!-- Water Access --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-water-access">
+                                <label class="form-check-label" for="defaultCheck1">Water Access</label>
+                                {{!-- Wheelchair Accessible --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-wheelchair-accessible">
+                                <label class="form-check-label" for="defaultCheck1">Wheelchair Accessible</label>
+                            </div>
+                        </div>
+                        {{!-- Warnings --}}
+                        <div class="trail-warnings">
+                            <h3>Warnings</h3>
+                            <div class="form-check">
+                                {{!-- Steep Terrain --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-steep-terrain">
+                                <label class="form-check-label" for="defaultCheck1">Steep Terrain</label>
+                                {{!-- Stairs --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-stairs">
+                                <label class="form-check-label" for="defaultCheck1">Stairs</label>
+                                {{!-- Loose Ground --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-loose-ground">
+                                <label class="form-check-label" for="defaultCheck1">Loose Ground</label>
+                                {{!-- Overhang --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-overhang">
+                                <label class="form-check-label" for="defaultCheck1">Overhang</label>
+                                {{!-- Damp --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-damp">
+                                <label class="form-check-label" for="defaultCheck1">Damp</label>
+                                {{!-- Fallen Trees --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-fallen-trees">
+                                <label class="form-check-label" for="defaultCheck1">Fallen Trees</label>
+                                {{!-- Bridge --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-bridge">
+                                <label class="form-check-label" for="defaultCheck1">Bridge</label>
+                                {{!-- Tight Spaces --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-tight-spaces">
+                                <label class="form-check-label" for="defaultCheck1">Tight Spaces</label>
+                    </div>
+                    {{!-- Sights --}}
+                    <h3>Sights</h3>
+                            <div class="form-check">
+                                {{!-- Outlook --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-outlook">
+                                <label class="form-check-label" for="defaultCheck1">Outlook</label>
+                                {{!-- Waterfall --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-watefall">
+                                <label class="form-check-label" for="defaultCheck1">Waterfall</label>
+                                {{!-- River --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-river">
+                                <label class="form-check-label" for="defaultCheck1">River</label>
+                                {{!-- Lake --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-lake">
+                                <label class="form-check-label" for="defaultCheck1">Lake</label>
+                                {{!-- Ocean --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-ocean">
+                                <label class="form-check-label" for="defaultCheck1">Ocean</label>
+                                {{!-- Rock Formation --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-rock-formation">
+                                <label class="form-check-label" for="defaultCheck1">Rock Formation</label>
+                    </div>
+                     {{!-- Wildlife --}}
+                    <h3>Wildlife</h3>
+                            <div class="form-check">
+                                {{!-- Bears --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-bears">
+                                <label class="form-check-label" for="defaultCheck1">Bears</label>
+                                {{!-- Ducks --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-ducks">
+                                <label class="form-check-label" for="defaultCheck1">Ducks</label>
+                                {{!-- Geese --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-geese">
+                                <label class="form-check-label" for="defaultCheck1">Geese</label>
+                                {{!-- Fox --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-fox">
+                                <label class="form-check-label" for="defaultCheck1">Fox</label>
+                                {{!-- Deer --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-deer">
+                                <label class="form-check-label" for="defaultCheck1">Deer</label>
+                                {{!-- Moose --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-moose">
+                                <label class="form-check-label" for="defaultCheck1">Moose</label>
+                                {{!-- Snakes --}}
+                                <input class="form-check-input" type="checkbox" value="" id="trail-snakes">
+                                <label class="form-check-label" for="defaultCheck1">Snakes</label>
+                    </div>
+                    
+                    {{!-- Trail Difficulty --}}
+                    <h2>Trail Difficulty</h2>
+                    <div id="trail-difficulty-rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+
+                    {{!-- Hiker Experience Level --}}
+                    <h2>Hiker Experience Level</h2>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Select Experience Level
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Beginner</a>
+                            <a class="dropdown-item" href="#">Moderate</a>
+                            <a class="dropdown-item" href="#">Expert</a>
+                        </div>
+                    </div>
+
+                    {{!-- Trail Length --}}
+                    <h2>Trail Length</h2>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Select Length
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">1</a>
+                            <a class="dropdown-item" href="#">2</a>
+                            <a class="dropdown-item" href="#">3</a>
+                            <a class="dropdown-item" href="#">4</a>
+                            <a class="dropdown-item" href="#">5</a>
+                            <a class="dropdown-item" href="#">6</a>
+                            <a class="dropdown-item" href="#">7</a>
+                            <a class="dropdown-item" href="#">8</a>
+                            <a class="dropdown-item" href="#">9</a>
+                            <a class="dropdown-item" href="#">10</a>
+                        </div>
+                    </div>
+
+                    {{!-- Trail Duration --}}
+                    <h2>Trail Duration</h2>
+                    <div class="form-group camp-post-title">
+                        <label>Title Your Adventure!</label>
+                        <input type="text" class="form-control" placeholder="Title">
+                    </div>
+
+                    {{!-- Post Body --}}
+                    <div>
+                        {{!-- Use Quilljs: HTML, CSS, JS, Install dependencies --}}
+                    </div>
+
+                    {{!-- Post Thumbnail Upload --}}
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Upload a Feature Image</label>
+                        <input type="file" class="form-control-file" id="trail-feature-image">
+                    </div>
+
+                    {{!-- Submit Form --}}
+                    <button type="submit" id="trail-form-submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
