@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment } = require('../models');
+const { CampgroundChecklist,CampgroundPost,Comment,TrailChecklist,TrailPost,User } = require('../models');
 const withAuth = require('../utils/auth');
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
@@ -75,8 +75,14 @@ router.get('/edit/:id', withAuth, (req, res) => {
         });
 })
 router.get('/new', (req, res) => {
-    res.render('new-post');
+    res.render('choose-path');
 });
+
+router.get('/wander', (req, res) => {
+    res.render('user-dashboard');
+}
+
+)
 
 
 
