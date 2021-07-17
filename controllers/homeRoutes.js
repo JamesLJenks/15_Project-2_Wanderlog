@@ -111,12 +111,14 @@ router.get('/edit/:id', withAuth, (req, res) => {
         });
 })
 router.get('/new', (req, res) => {
-    res.render('new-post');
+    res.render('user-dashboard');
 });
+
+
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/');
+        res.redirect('user-dashboard');
         return;
     }
     res.render('login');
