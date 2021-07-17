@@ -5,14 +5,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wanderlog</title>
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/site.css">
 </head>
 
-<body class="flex-column min-100-vh">
-  <nav class="navbar fixed-top">
+<body>
+  <nav class="navbar fixed-top navbar-custom navbar-expand-lg">
+    <div class="logo mx-3">
+      <a href="#"><img src="/assets/icons/Wanderlog-Lettermark_Reverse.svg" alt="Wanderlog W Logo"></a>
+    </div>
+    <div class="input-group rounded">
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search for a camping or trail experience">
+        <button class="btn navbar-button btn-primary btn-outline-success my-2 my-sm-0" type="submit">Wander</button>
+      </form>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto mx-2">
+        <li class="nav-item">
+          <a class="nav-link text-white mx-2" href="#">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white mx-2" href="#">Logout</a>
+        </li>
+      </ul>
+    </div>
+    <button class="btn btn-primary navbar-button my-2 mx-3 text-nowrap" type="submit"><img class="plus-icon" src="/assets/icons/plus-reverse.svg" /> Add New Adventure</button>
+  </nav>
+
+  {{!-- <nav class="navbar fixed-top">
     <a class="navbar-brand " href="#"><img src="/assets/w-logo" alt="Wanderlog Logo"></a>
     <div class="input-group rounded">
             <input type="search" class="form-control rounded" placeholder="Search the Wanderlog" aria-label="Search"
@@ -25,8 +47,7 @@
       {{!-- <li class="li-inline nav-item"><a href="/dashboard">Account</a></li> --}}
       <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
     </ul>
-    <a href="/dashboard/new"><button type="button" class="btn btn-primary btn-lg add-new-adventure-button">➕ Add New Adventure</button></a>
-  </nav>
+  </nav> --}}
 
   <main class="col-auto">
     {{{body}}}
