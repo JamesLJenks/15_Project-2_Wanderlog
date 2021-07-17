@@ -1,5 +1,17 @@
+/* Adobe Typekit Web Fonts */
 @import url("https://use.typekit.net/jnf7bws.css");
 
+/* Main Navbar */
+.navbar-custom {
+    background-color: #00aba7;
+    color: white;
+}
+
+.logo {
+    width: 4rem;
+}
+
+/* Site Custom Button */
 .custom-btn {
     background-color: #00aba7;
     border: none;
@@ -7,11 +19,74 @@
 
 .custom-btn:hover {
     background-color: #006160;
+    color: white;
     border: none;
     transform: scale(1.025);
-    transition: 0.3s;
 }
+
+.custom-btn:active {
+    background-color: #006160;
+    border: none;
+}
+
+.form-inline {
+    display: inherit;
+}
+
+/* Add New Adventure Button */
+.navbar-button {
+    background-color: #006160;
+    border: none;
+    color: white;
+}
+
+.navbar-button:hover {
+    background-color: #003f3e;
+    color: white;
+    border: none;
+    transform: scale(1.025);
+}
+
+.navbar-button:active {
+    background-color: #006160;
+    border: none;
+}
+
+.plus-icon {
+    width: 0.75rem;
+}
+
+/* Star Ratings */
 
 .checked {
     color: #BC6C25;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: nimbus-sans, sans-serif;
+}
+
+.landing-page-content {
+    position: absolute;
+    width: 100vw;
+}
+
+.video-background {
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(00, 0, 0, 0.6);
+}
+
+input[type="text"]::placeholder {                 
+    /* Firefox, Chrome, Opera */
+    text-align: center;
+    color: #BC6C25;
+}
+
+h1 {
+    font-family: pauline, sans-serif;
+    font-weight: bold;
+    font-size: 4rem;
 }
