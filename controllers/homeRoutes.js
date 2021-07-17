@@ -78,6 +78,15 @@ router.get('/new', (req, res) => {
     res.render('new-post');
 });
 
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('login');
+});
+
+
 
 
 module.exports = router;
