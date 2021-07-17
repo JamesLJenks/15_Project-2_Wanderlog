@@ -1,0 +1,55 @@
+{{!-- Build out containers, rows, and columns --}}
+
+<div class="container">
+    <div class = "row">
+        <div class = "col-2"></div>
+        <div class = "col-8">
+            <div class = "row">
+                <div class = "col-12">
+                    <h1>Welcome back wanderer!</h1>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-6">
+                    <div class="input-group rounded">
+                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                            aria-describedby="search-addon" />
+                        <span class="input-group-text border-0" id="search-addon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class = "col-6">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Sort
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class = "row">
+                {{#each post}}
+                <div class = "col-4">
+                    {{!-- jQuery onclick for heart and ajax post --}}
+                    <article class="card" style="width: 18rem;">
+                        <img src="/camping.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Adventure Title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Date</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">Location</h6>
+                        </div>
+                    </article>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        <div class = "col-2"></div>
+    </div>
+    
+</div>

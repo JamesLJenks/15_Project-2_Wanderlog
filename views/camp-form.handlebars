@@ -1,0 +1,145 @@
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <h1>Your Camping Adventure</h1>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <form class="camp-form">
+                {{!-- Post Title --}}
+                <h2>Title Your Adventure!</h2>
+                <div class="form-group camp-post-title">
+                    <input type="text" class="form-control" placeholder="Title">
+                </div>
+
+                {{!-- Campground Name --}}
+                <h2>Campground Name</h2>
+                <div class="form-group campground-name">
+                    <input type="text" class="form-control" placeholder="Campground">
+                </div>
+
+                {{!-- Datepicker --}}
+                <h2>Date Range</h2>
+                <div>
+                    {{!-- Insert Datepicker --}}
+                </div>
+
+                {{!-- Location --}}
+                <h2>Location</h2>
+                <div class="form-row">
+                    {{!-- City --}}
+                    <h2>Location</h2>
+                    <div class="col-md-6 mb-3">
+                        <label>City</label>
+                        <input type="text" class="form-control" id="camp-post-city" placeholder="City" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    {{!-- State --}}
+                    <div class="col-md-3 mb-3">
+                        <label for="validationCustom04">State</label>
+                        <input type="text" class="form-control" id="camp-post-state" placeholder="State" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid state.
+                        </div>
+                    </div>
+
+                    {{!-- Camp Checkboxes --}}
+                    <h2>Campground Checklist</h2>
+                    <div class="camp-checkboxes">
+                        {{!-- Terrain --}}
+                        <div class="camp-terrain">
+                            <h3>Terrain</h3>
+                            <div class="form-check">
+                                {{!-- Forest --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-forest">
+                                <label class="form-check-label" for="defaultCheck1">Forest</label>
+                                {{!-- Water --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-water">
+                                <label class="form-check-label" for="defaultCheck1">Water</label>
+                                {{!-- Water --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-beach">
+                                <label class="form-check-label" for="defaultCheck1">Beach</label>
+                            </div>
+                        <h3>Amenities</h3>
+                         <div class="form-check">
+                                {{!-- Pool --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-pool">
+                                <label class="form-check-label" for="defaultCheck1">Pool</label>
+                                {{!-- Wash Room --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-wash-room">
+                                <label class="form-check-label" for="defaultCheck1">Wash Room</label>
+                                {{!-- Laundry --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-laundry">
+                                <label class="form-check-label" for="defaultCheck1">Laundry</label>
+                                {{!-- Camp Store --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-store">
+                                <label class="form-check-label" for="defaultCheck1">Camp Store</label>
+                                {{!-- Ice --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-ice">
+                                <label class="form-check-label" for="defaultCheck1">Ice</label>
+                                {{!-- Firewood --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-firewood">
+                                <label class="form-check-label" for="defaultCheck1">Firewood</label>
+                                {{!-- Firepit --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-firepit">
+                                <label class="form-check-label" for="defaultCheck1">Firepit</label>
+                                {{!-- Electricity --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-electricity">
+                                <label class="form-check-label" for="defaultCheck1">Electricity</label>
+                                {{!-- Boating --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-boating">
+                                <label class="form-check-label" for="defaultCheck1">Boating</label>
+                                {{!-- Fishing --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-fishing">
+                                <label class="form-check-label" for="defaultCheck1">Fishing</label>
+                            </div>
+                        </div>
+                     <h3>Accomodations</h3>
+                         <div class="form-check">
+                                {{!-- Kid Friendly --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-kid-friendly">
+                                <label class="form-check-label" for="defaultCheck1">Pool</label>
+                                {{!-- Pet Friendly --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-pet-frienyly">
+                                <label class="form-check-label" for="defaultCheck1">Wash Room</label>
+                                {{!-- Dog Park --}}
+                                <input class="form-check-input" type="checkbox" value="" id="camp-dog-park">
+                                <label class="form-check-label" for="defaultCheck1">Dog Park</label>
+                    
+                    {{!-- Comfort --}}
+                    <h2>Campground Comfort</h2>
+                    <div id="camp-comfort-rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+
+                    {{!-- Post Body --}}
+                    <div>
+                        {{!-- Use Quilljs: HTML, CSS, JS, Install dependencies --}}
+                    </div>
+
+                    {{!-- Post Thumbnail Upload --}}
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Upload a Feature Image</label>
+                        <input type="file" class="form-control-file" id="camp-feature-image">
+                    </div>
+
+                    {{!-- Submit Form --}}
+                    <button type="submit" id="camp-form-submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
