@@ -1,14 +1,35 @@
 /* Adobe Typekit Web Fonts */
 @import url("https://use.typekit.net/jnf7bws.css");
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.grow { 
+    transition: all .1s ease-in-out; 
+}
+
+.grow:hover { 
+    transform: scale(1.1); 
+}
+
 /* Main Navbar */
 .navbar-custom {
     background-color: #00aba7;
-    color: white;
 }
 
 .logo {
     width: 4rem;
+}
+
+.menu-text:hover {
+    color: lightgray;
 }
 
 /* Site Custom Button */
@@ -21,7 +42,8 @@
     background-color: #006160;
     color: white;
     border: none;
-    transform: scale(1.025);
+    transform: scale(1.05);
+    transition: all .1s ease-in-out; 
 }
 
 .custom-btn:active {
@@ -44,16 +66,12 @@
     background-color: #003f3e;
     color: white;
     border: none;
-    transform: scale(1.025);
+    transform: scale(1.05);
 }
 
 .navbar-button:active {
     background-color: #006160;
     border: none;
-}
-
-.plus-icon {
-    width: 0.75rem;
 }
 
 /* Star Ratings */
@@ -82,7 +100,7 @@ body {
 input[type="text"]::placeholder {                 
     /* Firefox, Chrome, Opera */
     text-align: center;
-    color: #BC6C25;
+    color: gray;
 }
 
 h1 {
