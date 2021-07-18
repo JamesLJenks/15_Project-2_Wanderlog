@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 class Comment extends Model {}
+
 Comment.init({
     id: {
         type: DataTypes.INTEGER,
@@ -22,27 +23,27 @@ Comment.init({
             key: 'id'
         }
     },
-    associate: models => {
-        // 1 to many with campground_post
-        Comment.hasMany(models.Campground_post, {
-          foreignKey: 'campground_post',
-        });
-        return Campground_post;
-    },
-    associate: models => {
-        // 1 to many with trail_post
-        Comment.hasMany(models.Trail_post, {
-          foreignKey: 'Trail_post',
-        });
-        return Trail_post;
-    },
-    associate: models => {
-        // 1 to many with user
-        Comment.hasMany(models.User, {
-          foreignKey: 'creator',
-        });
-        return User;
-    },
+    // associate: models => {
+    //     // 1 to many with campground_post
+    //     Comment.hasMany(models.Campground_post, {
+    //       foreignKey: 'campground_post',
+    //     });
+    //     return Campground_post;
+    // },
+    // associate: models => {
+    //     // 1 to many with trail_post
+    //     Comment.hasMany(models.Trail_post, {
+    //       foreignKey: 'Trail_post',
+    //     });
+    //     return Trail_post;
+    // },
+    // associate: models => {
+    //     // 1 to many with user
+    //     Comment.hasMany(models.User, {
+    //       foreignKey: 'creator',
+    //     });
+    //     return User;
+    // },
     post_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
