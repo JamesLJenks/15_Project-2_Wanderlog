@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 
 class Campground_post extends Model {}
 
-Campground_post.init(
+Campgroud_post.init(
   {
     published: {
       type: DataTypes.BOOLEAN,

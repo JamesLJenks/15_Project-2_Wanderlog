@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 
 class Campground_checklist extends Model {}
 
-Campground_checklist.init(
+Campgroud_checklist.init(
   {
     name: {
       type: DataTypes.STRING
