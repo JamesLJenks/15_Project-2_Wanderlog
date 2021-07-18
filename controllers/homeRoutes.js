@@ -58,46 +58,33 @@ router.get("/user-dashboard", (req, res)=> {
 
     */
     res.render('user-dashboard', {
-        posts:  [
+        campposts:  [
             {
-                title: 'title one',
+                title: 'Sleepy Night',
                 date: 'July 18th, 2021',
                 location: 'yellowstone park',
-                image: 'https://i.natgeofe.com/n/23125495-1307-4f0c-8583-602d9048b41b/gettyimages-667781269_16x9.jpg'
+                user: 'Snow White',
+                image: 'https://picsum.photos/id/237/320/240'
             },
             {
-                title: 'title two',
+                title: 'Twilight Encounter',
                 date: 'July 18th, 2021',
                 location: 'yellowstone park',
-                image: 'https://i.natgeofe.com/n/23125495-1307-4f0c-8583-602d9048b41b/gettyimages-667781269_16x9.jpg'
+                user: 'John Smith',
+                image: 'https://picsum.photos/id/237/320/240'
             },
             {
-                title: 'title three',
+                title: 'Hungry Bear',
                 date: 'July 18th, 2021',
                 location: 'yellowstone park',
-                image: 'https://i.natgeofe.com/n/23125495-1307-4f0c-8583-602d9048b41b/gettyimages-667781269_16x9.jpg'
+                user: 'Yogi Bear',
+                image: 'https://picsum.photos/id/237/320/240'
             },
-            {
-                title: 'title four',
-                date: 'July 18th, 2021',
-                location: 'yellowstone park',
-                image: 'https://i.natgeofe.com/n/23125495-1307-4f0c-8583-602d9048b41b/gettyimages-667781269_16x9.jpg'
-            },
-            {
-                title: 'title five',
-                date: 'July 18th, 2021',
-                location: 'yellowstone park',
-                image: 'https://i.natgeofe.com/n/23125495-1307-4f0c-8583-602d9048b41b/gettyimages-667781269_16x9.jpg'
-            },
-            {
-                title: 'title six',
-                date: 'July 18th, 2021',
-                location: 'yellowstone park',
-                image: 'https://i.natgeofe.com/n/23125495-1307-4f0c-8583-602d9048b41b/gettyimages-667781269_16x9.jpg'
-            }
         ]
     })
 })
+
+
 
 //make routes for remaining handlebar files
 
