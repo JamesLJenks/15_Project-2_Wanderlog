@@ -63,14 +63,14 @@ User.init(
             return updatedUserData;
         },
         // define a password column 
-        associate: models => {
-          // 1 to many with campground_post
-          User.hasMany(models.Campground_post, {
-            foreignKey: 'creator',
-          });
-          return Campground_post;
+        // associate: models => {
+        //   // 1 to many with campground_post
+        //   User.hasMany(models.Campground_post, {
+        //     foreignKey: 'creator',
+        //   });
+        //   return Campground_post;
 
-        }
+        // }
         
 
     

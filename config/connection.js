@@ -11,12 +11,16 @@ if (process.env.JAWSDB_URL) {
     process.env.DB_USER,
     process.env.DB_PASSWORD,
     {
-      host: 'kfgk8u2ogtoylkq9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-      user: 'c117dkwp1sqty9tr',
-      password: '',
-      database: 'y6tgc0qxxlfx47gn',
-      dialect: 'mysql',
-      port: 3306
+      host: 'localhost',
+        dialect: 'mysql',
+        password: '##MyPassword7',
+        port: 3306
+      // host: 'kfgk8u2ogtoylkq9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+      // user: 'c117dkwp1sqty9tr',
+      // password: '',
+      // database: 'y6tgc0qxxlfx47gn',
+      // dialect: 'mysql',
+      // port: 3306
     }
   );
 }

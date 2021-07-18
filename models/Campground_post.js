@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 
 class Campground_post extends Model {}
 
-Campgroud_post.init(
+Campground_post.init(
   {
     published: {
       type: DataTypes.BOOLEAN,
@@ -45,13 +45,13 @@ Campgroud_post.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    associate: models => {
-      // 1 to many with campground_checklist
-      User.hasMany(models.Campground_checklist, {
-        foreignKey: 'campground_checklist',
-      });
-      return Campground_checklist;
-    }
+  //   associate: models => {
+  //     // 1 to many with campground_checklist
+  //     User.hasMany(models.Campground_checklist, {
+  //       foreignKey: 'campground_checklist',
+  //     });
+  //     return Campground_checklist;
+  //   }
   },
   {
     sequelize,
