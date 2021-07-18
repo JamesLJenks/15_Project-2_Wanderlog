@@ -3,6 +3,76 @@ const sequelize = require('../config/connection');
 const { Campground_Post, Trail_Post, Campground_Checklist, Trail_Checklist, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+router.get('/choose-path', (req, res) => {
+    res.render("choose-path")
+})
+
+router.get('/camp-form', (req, res) => {
+    res.render("camp-form") 
+})
+
+router.get("/user-dashboard", (req, res)=> {
+
+    /*
+        TODO
+        In order to get the data from the db instead, 
+        make a query before the render either right here
+        or better yet in another controller file. 
+
+        That query will get you data from your api/db, 
+        and then you can pass that as an object the render
+
+        ex psuedocode: 
+
+        let queryData = await api.query()
+        res.render('user-dashboard', queryData)
+
+
+    */
+    res.render('user-dashboard', {
+        posts:  [
+            {
+                title: 'title one',
+                date: 'July 18th, 2021',
+                location: 'yellowstone park',
+                image: 'https://i.natgeofe.com/n/23125495-1307-4f0c-8583-602d9048b41b/gettyimages-667781269_16x9.jpg'
+            },
+            {
+                title: 'title two',
+                date: 'July 18th, 2021',
+                location: 'yellowstone park',
+                image: 'https://i.natgeofe.com/n/23125495-1307-4f0c-8583-602d9048b41b/gettyimages-667781269_16x9.jpg'
+            },
+            {
+                title: 'title three',
+                date: 'July 18th, 2021',
+                location: 'yellowstone park',
+                image: 'https://i.natgeofe.com/n/23125495-1307-4f0c-8583-602d9048b41b/gettyimages-667781269_16x9.jpg'
+            },
+            {
+                title: 'title four',
+                date: 'July 18th, 2021',
+                location: 'yellowstone park',
+                image: 'https://i.natgeofe.com/n/23125495-1307-4f0c-8583-602d9048b41b/gettyimages-667781269_16x9.jpg'
+            },
+            {
+                title: 'title five',
+                date: 'July 18th, 2021',
+                location: 'yellowstone park',
+                image: 'https://i.natgeofe.com/n/23125495-1307-4f0c-8583-602d9048b41b/gettyimages-667781269_16x9.jpg'
+            },
+            {
+                title: 'title six',
+                date: 'July 18th, 2021',
+                location: 'yellowstone park',
+                image: 'https://i.natgeofe.com/n/23125495-1307-4f0c-8583-602d9048b41b/gettyimages-667781269_16x9.jpg'
+            }
+        ]
+    })
+})
+
+//make routes for remaining handlebar files
+
 router.get('/', (req, res) => {
     // Camground_Post.findAll({
     //         where: {
