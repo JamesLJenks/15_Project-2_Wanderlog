@@ -37,3 +37,104 @@
     </div>
     
 </div>
+
+
+
+{{!-- NEW CODE --}}
+<main class="row page-content-padding">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <div>
+            <h1 class="display-4 text-center">Welcome Back Wanderer!</h1>
+            <hr class="mb-4">
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="row container-fluid mb-3 btn-toolbar mb-5">
+            <div class="col-6 form-inline">
+                <input type="text" class="form-control" placeholder="Search Your Wanderlog" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2">
+                <div class="input-group">
+                    <button class="btn custom-btn btn-outline-secondary mx-2 grow text-white" type="button">Search</button>
+                </div>
+            </div>
+            <form class="col-6 input-group form-inline">
+                <select class="custom-select rounded custom-dropdown" id="inputGroupSelect04">
+                  <option selected>Choose...</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn custom-btn btn-outline-secondary mx-2 grow text-white" type="button">Filter</button>
+                </div>
+              </div>
+            </form>
+
+        <!-- Posts -->
+        <div class="row d-flex justify-content-around">
+
+            <!-- Card 1: Camping Adventure -->
+            <div class="card shadow-lg p-3 mx-3 mb-5" style="width: 19rem;">
+                <div class="fill">
+                    <img src="https://picsum.photos/id/237/320/240" alt="" />
+                </div>
+                <div class="like-container container-fluid d-flex align-items-center px-3">
+                    <img src="/public/assets/icons/like-default.svg" />
+                    <h5 class="text-white mx-2">100</h5>
+                </div>
+                <div class="row">
+                    <div class="col-3 d-flex flex-row">
+                        <img src="/public/assets/icons/campground.svg" class="icon" />
+                    </div>
+                    <div class="col-9">
+                        <h5 class="">A Camping Adventure for the Ages</h5>
+                    </div>
+                    <div>
+                        <h6>
+                            Date:
+                        </h6>
+                        <h6>
+                            Location:
+                        </h6>
+                        <h6>
+                            User:
+                        </h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Trail Quest -->
+            <div class="card shadow-lg p-3 mx-3 mb-5" style="width: 19rem;">
+                <div class="fill">
+                    <img src="https://picsum.photos/id/237/320/240" alt="" />
+                </div>
+                <div class="like-container container-fluid d-flex align-items-center px-3">
+                    <img src="/public/assets/icons/like-default.svg" />
+                    <h5 class="text-white mx-2">100</h5>
+                </div>
+                <div class="row">
+                    <div class="col-3 d-flex flex-row">
+                        <img src="/public/assets/icons/hiking.svg" class="icon" />
+                    </div>
+                    <div class="col-9">
+                        <h5 class="">A Trail Quest That Would Put Frodo's to Shame</h5>
+                    </div>
+                    <div>
+                        <h6>
+                            Date:
+                        </h6>
+                        <h6>
+                            Location:
+                        </h6>
+                        <h6>
+                            User:
+                        </h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-2"></div>
+</main>
