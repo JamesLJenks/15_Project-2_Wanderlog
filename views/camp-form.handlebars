@@ -1,41 +1,38 @@
-<div class="container">
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
-            <h1>Your Camping Adventure</h1>
+<main class="row page-content-padding">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <div>
+            <h1 class="text-center">Your Camping Adventure!</h1>
+            <hr class="mb-4">
         </div>
-        <div class="col-2"></div>
-    </div>
-</div>
+        <form class="camp-form">
 
-<div class="container">
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
-            <form class="camp-form">
                 {{!-- Post Title --}}
-                <h2>Title Your Adventure!</h2>
+                <h4>Title Your Adventure!</h4>
                 <div class="form-group camp-post-title">
                     <input type="text" class="form-control" placeholder="Title">
                 </div>
 
                 {{!-- Campground Name --}}
-                <h2>Campground Name</h2>
+                <h4 class="my-3">Campground Name</h4>
                 <div class="form-group campground-name">
                     <input type="text" class="form-control" placeholder="Campground">
                 </div>
 
                 {{!-- Datepicker --}}
-                <h2>Date Range</h2>
+                <h4 class="my-3">Date Range</h4>
                 <div>
-                    {{!-- Insert Datepicker --}}
+                    <div class="container my-3">
+                        <h6 class="my-3">Trip Start Date</h6>
+                        <input type="date" id="picker" class="form-control">
+                        <h6 class="my-3">Trip End Date</h6>
+                        <input type="date" id="picker" class="form-control">
                 </div>
 
                 {{!-- Location --}}
-                <h2>Location</h2>
+                <h4 class="my-3">Location</h4>
                 <div class="form-row">
                     {{!-- City --}}
-                    <h2>Location</h2>
                     <div class="col-md-6 mb-3">
                         <label>City</label>
                         <input type="text" class="form-control" id="camp-post-city" placeholder="City" required>
@@ -51,72 +48,166 @@
                             Please provide a valid state.
                         </div>
                     </div>
-
+                    
                     {{!-- Camp Checkboxes --}}
-                    <h2>Campground Checklist</h2>
+                    <h4 class="my-3">Campground Checklist</h4>
                     <div class="camp-checkboxes">
+
                         {{!-- Terrain --}}
                         <div class="camp-terrain">
-                            <h3>Terrain</h3>
+                            <h6 class="my-3">Terrain</h6>
                             <div class="form-check">
-                                {{!-- Forest --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-forest">
-                                <label class="form-check-label" for="defaultCheck1">Forest</label>
-                                {{!-- Water --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-water">
-                                <label class="form-check-label" for="defaultCheck1">Water</label>
-                                {{!-- Water --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-beach">
-                                <label class="form-check-label" for="defaultCheck1">Beach</label>
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Forest
+                                </label>
                             </div>
-                        <h3>Amenities</h3>
-                         <div class="form-check">
-                                {{!-- Pool --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-pool">
-                                <label class="form-check-label" for="defaultCheck1">Pool</label>
-                                {{!-- Wash Room --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-wash-room">
-                                <label class="form-check-label" for="defaultCheck1">Wash Room</label>
-                                {{!-- Laundry --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-laundry">
-                                <label class="form-check-label" for="defaultCheck1">Laundry</label>
-                                {{!-- Camp Store --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-store">
-                                <label class="form-check-label" for="defaultCheck1">Camp Store</label>
-                                {{!-- Ice --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-ice">
-                                <label class="form-check-label" for="defaultCheck1">Ice</label>
-                                {{!-- Firewood --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-firewood">
-                                <label class="form-check-label" for="defaultCheck1">Firewood</label>
-                                {{!-- Firepit --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-firepit">
-                                <label class="form-check-label" for="defaultCheck1">Firepit</label>
-                                {{!-- Electricity --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-electricity">
-                                <label class="form-check-label" for="defaultCheck1">Electricity</label>
-                                {{!-- Boating --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-boating">
-                                <label class="form-check-label" for="defaultCheck1">Boating</label>
-                                {{!-- Fishing --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-fishing">
-                                <label class="form-check-label" for="defaultCheck1">Fishing</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Water
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Beach
+                                </label>
                             </div>
                         </div>
-                     <h3>Accomodations</h3>
-                         <div class="form-check">
-                                {{!-- Kid Friendly --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-kid-friendly">
-                                <label class="form-check-label" for="defaultCheck1">Pool</label>
-                                {{!-- Pet Friendly --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-pet-frienyly">
-                                <label class="form-check-label" for="defaultCheck1">Wash Room</label>
-                                {{!-- Dog Park --}}
-                                <input class="form-check-input" type="checkbox" value="" id="camp-dog-park">
-                                <label class="form-check-label" for="defaultCheck1">Dog Park</label>
+
+                        {{!-- Amenities --}}
+                        <div class="amenities">
+                            <h6 class="my-3">Amenities</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Pool
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Wash Room
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Laundry
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Camp Store
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Ice
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Firewood
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Fire Pit
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Electricity
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Boating
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Fishing
+                                </label>
+                            </div>
+                        </div>
+                        <div class="camp-checkboxes">
+
+                        {{!-- Accommodations --}}
+                        <div class="accommodations">
+                            <h6 class="my-3">Accommodations</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Kid Friendly
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Pet Friendly
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Dog Park
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Alcohol Permitted
+                                </label>
+                            </div>
+                        </div>
+
+                        {{!-- Recreation --}}
+                        <div class="camp-terrain">
+                            <h6 class="my-3">Recreation</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Hiking
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Biking
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    ORV
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Boating
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="false" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Fishing
+                                </label>
+                            </div>
+                        </div>
                     
                     {{!-- Comfort --}}
-                    <h2>Campground Comfort</h2>
+                    <h4 class="my-3">Campground Comfort</h4>
                     <div id="camp-comfort-rating">
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -128,21 +219,20 @@
                     {{!-- Post Body --}}
                    
                     <div>
+                        <h4 class="my-3">Tell Your Story</h4>
+                        <textarea class="span6" rows="20" placeholder="Type Here" required></textarea>
                         {{!-- Use Quilljs: HTML, CSS, JS, Install dependencies --}}
                     </div>
 
-
-
                     {{!-- Post Thumbnail Upload --}}
-                    <div class="form-group">
+                    <h4 class="my-3">Upload a Thumbnail Image</h4>
+                    <div class="form-group my-3">
                         <label for="exampleFormControlFile1">Upload a Feature Image</label>
                         <input type="file" class="form-control-file" id="camp-feature-image">
                     </div>
 
                     {{!-- Submit Form --}}
-                    <button type="submit" id="camp-form-submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" id="camp-form-submit" class="btn btn-primary custom-btn mb-5">Submit</button>
             </form>
-        </div>
-        <div class="col-2"></div>
     </div>
-</div>
+    <div class="col-lg-2"></div>
