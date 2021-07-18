@@ -118,10 +118,6 @@ p {
     border: none;
 }
 
-.form-inline {
-    display: inherit;
-}
-
 /* Star Ratings */
 .checked {
     color: #BC6C25;
@@ -146,16 +142,23 @@ p {
     background-color: rgba(00, 0, 0, 0.6);
 }
 
+/* Forms and Inputs */
 input[type="text"]::placeholder {                 
     /* Firefox, Chrome, Opera */
     text-align: center;
     color: gray;
 }
 
+.form-inline {
+    display: inherit;
+}
+
+/* Tan page background */
 .tan-background {
     background-color: #F8EEE1;
 }
 
+/* Adds padding to the top of pages with content so that the navbar does not obstruct the view. */
 .page-content-padding {
     padding-top: 15vh;
 }
@@ -165,6 +168,7 @@ input[type="text"]::placeholder {
     border: none;
 }
 
+/* Fills parent container with image */
 .fill {
     display: flex;
     justify-content: center;
@@ -177,62 +181,21 @@ input[type="text"]::placeholder {
     min-height: 100%
 }
 
+/* For post cards */
 .like-container {
     background-color: #00ABA7;
-    width: 40%;
+    width: 50%;
     height: 15%;
     border-radius: 5rem;
-}
-
-
-
-
-/* using a mobile-first approach, set base column width to be 100% and we'll update it using media queries for larger screen sizes */
-.camp-post-column {
-    flex: 1 0 100%;
-    padding: 1.5rem;
-    /* when the screen resizes, make it so our columns don't jump in size */
-    transition: flex-basis 500ms linear;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* make each code card a flexbox column to align and justify content within it */
-  .camp-post-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: 100%;
-    padding: 2rem;
-    color: black;
-  
-    /* outline is like border, but on the outside of the box instead of inside */
-    outline: 2px dashed var(--gin);
-    outline-offset: -2px;
-    transition: all 0.5s ease-in-out;
-  }
-  
-  .camp-post-column .card-header {
-    /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
+    display: block;
+    text-align: center;
     position: relative;
-    margin: -4rem 0 1.5rem 0;
+    margin: -1.5rem 0 1.5rem -1.25rem;
     padding: 0.5rem 1rem;
-    background-color: var(--outer-space);
-    color: var(--heliotrope);
+    color: white;
     border: 2px solid var(--gin);
-    border-radius: 8px;
     transition: all 0.5s ease-in-out;
-  }
-  
-  /* set an outer and inner drop shadow on the card to create a glowing effect on hover */
-  .camp-post-card:hover,
-  .camp-post-card:hover .card-header {
-    box-shadow: inset 0px 0px 8px var(--heliotrope), 0 0 15px #00ABA7;
-  }
-  
-  /* each card's code block grows to the height of the largest code block on the page, making each card even in height */
-  .camp-post-card .code-block {
-    flex-grow: 1;
-  }
+}
 
 
 
