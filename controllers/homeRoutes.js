@@ -19,6 +19,10 @@ router.get('/global-dashboard', (req, res) => {
     res.render("global-dashboard") 
 })
 
+router.get('/landing-page', (req, res) => {
+    res.render("landing-page") 
+})
+
 router.get('/login', (req, res) => {
     res.render("login") 
 })
