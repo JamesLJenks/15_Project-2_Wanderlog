@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/public/css/fixed.css">
 </head>
 
-<body>
+<body class="tan-background">
 
 <!-- Navigation -->
 <nav class="navbar navbar-custom navbar-expand-lg navbar-dark fixed-top">
@@ -45,39 +45,28 @@
 </nav>
 
   <!-- Main Content -->
-  <main class="col-auto">
-    <!-- Video Background -->
-    <div class="video-background">
-        <div class = "video-wrap">
-            <div id="video">
-                <video id="bgvid" autoplay loop muted playsinline>
-                    <source src="/public/assets/Walk-in-the-Woods-Reduced.mp4" type="video/mp4">
-                </video>
-            </div>
+<main class="row page-content-padding">
+    <div class="col-lg-2 col-md-2"></div>
+    <div class="col-lg-8">
+        <div>
+            <h1 class="display-4">Welcome Back Wanderer!</h1>
         </div>
-    </div>
-    <!-- Content -->
-    <div class="jumbotron jumbotron-fluid d-flex align-items-center vh-100 landing-page-content">
-        <div class = "col-lg-3 col-md-2"></div>
-        <div class="container">
-            <div class="row justify-content-center mx-5 my-5">
-                <img src="/public/assets/Wanderlog-Logo_Reverse.png" alt="Wanderlog Logo" class="col-lg-8 img-fluid my-3">
-                <h2 class="lead text-white text-center">Your camping and hiking guestbook.<h2>
-            </div>
-            <div class="text-center mx-5">
-                <div class="form-group mb-4">
-                    <input type="text" class="form-control rounded" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Search for a camping or trail experience">
+        <div class="row">
+            <div class="container card col-lg-3 col-md-6 col-sm-1 m-3 camp-post-card" style="width: 18rem;">
+                <div class="fill">
+                    <img src="https://picsum.photos/id/237/320/240" alt="" />
                 </div>
-                <a class="col-lg-6 col-12 btn custom-btn btn-primary btn-lg btn-block" href="/views/global-dashboard" role="button">Wander!</a>
-            </div>
-            <div class="text-center my-5">
-                <a class="col-lg-2 col-3 btn custom-btn btn-primary btn-block mx-2 grow" href="/views/html-templates/login.html" role="button">Login</a>
-                <a class="col-lg-2 col-3 btn custom-btn btn-primary btn-block mx-2 grow" href="/views/html-templates/signup.html" role="button">Sign Up</a>
+                <div class="like-container">
+                    <img src="/public/assets/icons/like-default.svg" />
+                </div>
+                <div>
+                    <h4 class="">Card title</h4>
+                </div>
             </div>
         </div>
-        <div class = "col-lg-3 col-md-2"></div>
     </div>
-  </main>
+    <div class="col-lg-2 col-md-2"></div>
+</main>
 
   <!-- Footer -->
   <footer class="footer flex-row justify-center">

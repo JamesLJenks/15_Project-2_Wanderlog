@@ -7,8 +7,55 @@
     padding: 0;
 }
 
+body {
+    overflow-x: hidden;
+    font-family: nimbus-sans, sans-serif;
+}
+
 a {
     text-decoration: none;
+}
+
+h1 {
+    font-family: pauline, sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    color: #BC6C25;
+}
+
+h2 {
+    font-family: nimbus-sans, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+  
+h3 {
+    font-family: nimbus-sans, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+  
+h4 {
+    font-family: nimbus-sans, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+  
+h5 {
+    font-family: nimbus-sans, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #BC6C25;
+}
+  
+h6 {
+    font-family: nimbus-sans, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+p {
+    font-family: nimbus-sans, sans-serif;
 }
 
 .grow { 
@@ -16,7 +63,8 @@ a {
 }
 
 .grow:hover { 
-    transform: scale(1.1); 
+    transform: scale(1.1);
+    transition: all .1s ease-in-out; 
 }
 
 /* Main Navbar */
@@ -30,6 +78,25 @@ a {
 
 .menu-text:hover {
     color: lightgray;
+}
+
+/* Add New Adventure Button */
+.navbar-button {
+    background-color: #006160;
+    border: none;
+    color: white;
+}
+
+.navbar-button:hover {
+    background-color: #003f3e;
+    color: white;
+    border: none;
+    transform: scale(1.05);
+}
+
+.navbar-button:active {
+    background-color: #006160;
+    border: none;
 }
 
 /* Site Custom Button */
@@ -55,34 +122,9 @@ a {
     display: inherit;
 }
 
-/* Add New Adventure Button */
-.navbar-button {
-    background-color: #006160;
-    border: none;
-    color: white;
-}
-
-.navbar-button:hover {
-    background-color: #003f3e;
-    color: white;
-    border: none;
-    transform: scale(1.05);
-}
-
-.navbar-button:active {
-    background-color: #006160;
-    border: none;
-}
-
 /* Star Ratings */
-
 .checked {
     color: #BC6C25;
-}
-
-body {
-    overflow-x: hidden;
-    font-family: nimbus-sans, sans-serif;
 }
 
 .landing-page-content {
@@ -90,9 +132,16 @@ body {
     width: 100vw;
 }
 
+/* Heroes */
 .video-background {
     position: absolute;
     width: 100%;
+    min-height: 100vh;
+    background-color: rgba(00, 0, 0, 0.6);
+}
+
+.hero-background-image {
+    object-fit: cover;
     min-height: 100vh;
     background-color: rgba(00, 0, 0, 0.6);
 }
@@ -103,8 +152,94 @@ input[type="text"]::placeholder {
     color: gray;
 }
 
-h1 {
-    font-family: pauline, sans-serif;
-    font-weight: bold;
-    font-size: 4rem;
+.tan-background {
+    background-color: #F8EEE1;
 }
+
+.page-content-padding {
+    padding-top: 15vh;
+}
+
+.camp-post-card {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
+.like-container {
+    background-color: #00ABA7;
+    width: 40%;
+    height: 15%;
+    border-radius: 5rem;
+}
+
+
+
+
+/* using a mobile-first approach, set base column width to be 100% and we'll update it using media queries for larger screen sizes */
+.camp-post-column {
+    flex: 1 0 100%;
+    padding: 1.5rem;
+    /* when the screen resizes, make it so our columns don't jump in size */
+    transition: flex-basis 500ms linear;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* make each code card a flexbox column to align and justify content within it */
+  .camp-post-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100%;
+    padding: 2rem;
+    color: black;
+  
+    /* outline is like border, but on the outside of the box instead of inside */
+    outline: 2px dashed var(--gin);
+    outline-offset: -2px;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .camp-post-column .card-header {
+    /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
+    position: relative;
+    margin: -4rem 0 1.5rem 0;
+    padding: 0.5rem 1rem;
+    background-color: var(--outer-space);
+    color: var(--heliotrope);
+    border: 2px solid var(--gin);
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  /* set an outer and inner drop shadow on the card to create a glowing effect on hover */
+  .camp-post-card:hover,
+  .camp-post-card:hover .card-header {
+    box-shadow: inset 0px 0px 8px var(--heliotrope), 0 0 15px #00ABA7;
+  }
+  
+  /* each card's code block grows to the height of the largest code block on the page, making each card even in height */
+  .camp-post-card .code-block {
+    flex-grow: 1;
+  }
+
+
+
+
+@media screen and (max-width: 768px) {
+    .page-content-padding {
+        padding-top: 10vh;
+    }
+}
+

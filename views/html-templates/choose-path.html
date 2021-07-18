@@ -16,7 +16,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-custom navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-    <a href="#home"><img src="/public/assets/icons/Wanderlog-Lettermark_Reverse.svg" alt="Wanderlog W Logo" class="logo mx-3 grow"></a>
+    <a href="#"><img src="/public/assets/icons/Wanderlog-Lettermark_Reverse.svg" alt="Wanderlog W Logo" class="logo mx-3 grow"></a>
     <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="Search"
         aria-label="Search for a camping or trail experience">
@@ -28,10 +28,10 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav d-flex align-items-center">
         <li class="nav-item px-2">
-          <a class="nav-link grow text-white" href="/views/html-templates/login.html">Login</a>
+          <a class="nav-link grow text-white" href="#login">Login</a>
         </li>
         <li class="nav-item px-2">
-          <a class="nav-link grow text-white" href="/views/html-templates/landing-page.html">Logout</a>
+          <a class="nav-link grow text-white" href="#logout">Logout</a>
         </li>
         <li class="nav-item px-2">
           <a class="nav-link" href="#" target="_blank">
@@ -46,13 +46,11 @@
 
   <!-- Main Content -->
   <main class="col-auto">
-    <!-- Video Background -->
+    <!-- Hero Background -->
     <div class="video-background">
         <div class = "video-wrap">
             <div id="video">
-                <video id="bgvid" autoplay loop muted playsinline>
-                    <source src="/public/assets/Walk-in-the-Woods-Reduced.mp4" type="video/mp4">
-                </video>
+                <img src="/public/assets/Choose-Path-Background.jpeg" class="img-fluid hero-background-image" alt="Person stands in field looking at hilly horizon at twilight with tent in foreground.">
             </div>
         </div>
     </div>
@@ -61,18 +59,22 @@
         <div class = "col-lg-3 col-md-2"></div>
         <div class="container">
             <div class="row justify-content-center mx-5 my-5">
-                <img src="/public/assets/Wanderlog-Logo_Reverse.png" alt="Wanderlog Logo" class="col-lg-8 img-fluid my-3">
-                <h2 class="lead text-white text-center">Your camping and hiking guestbook.<h2>
+                <h1 class="text-white text-center">Pick Your Path<h2>
             </div>
-            <div class="text-center mx-5">
-                <div class="form-group mb-4">
-                    <input type="text" class="form-control rounded" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Search for a camping or trail experience">
+            <div class="row text-center my-5">
+              <div class="container col-lg-6 justify-content-center">
+                <a href="/camp-form" role="button"><img src="/public/assets/icons/Wanderlog-Icon_Tent_Reverse.svg" class="img-fluid my-5 grow" alt="Tent icon"></a>
+                <a class="btn custom-btn btn-primary btn-lg py-2 grow text-center" href="/camp-form" role="button"><h4 class="px-4">Camping Adventure</h4></a>
+              </div>
+              <div class="container col-lg-6 justify-content-center">
+                <div>
+                  <a href="/trail-form" role="button"><img src="/public/assets/icons/Wanderlog-Icon_Trail_Reverse.svg" class="img-fluid my-5 grow" alt="Trail icon"></a>
                 </div>
-                <a class="col-lg-6 col-12 btn custom-btn btn-primary btn-lg btn-block" href="/views/global-dashboard" role="button">Wander!</a>
-            </div>
-            <div class="text-center my-5">
-                <a class="col-lg-2 col-3 btn custom-btn btn-primary btn-block mx-2 grow" href="/views/html-templates/login.html" role="button">Login</a>
-                <a class="col-lg-2 col-3 btn custom-btn btn-primary btn-block mx-2 grow" href="/views/html-templates/signup.html" role="button">Sign Up</a>
+                <div>
+                  <a class="btn custom-btn btn-primary btn-lg py-2 grow text-center" href="/trail-form" role="button"><h4 class="px-4">Trail Quest</h4></a>
+                </div>
+
+              </div>
             </div>
         </div>
         <div class = "col-lg-3 col-md-2"></div>
