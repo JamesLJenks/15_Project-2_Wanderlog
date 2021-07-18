@@ -40,13 +40,6 @@ Trailpost.init(
         type: DataTypes.STRING,
         allowNull: false
       },
-      associate: models => {
-        // 1 to many with trail_checklist
-        User.hasMany(models.Trail_checklist, {
-          foreignKey: 'trail_checklist',
-        });
-        return Trail_checklist;
-      },
     },
     {
       sequelize,

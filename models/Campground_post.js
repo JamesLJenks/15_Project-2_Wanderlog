@@ -48,7 +48,7 @@ Campgroud_post.init(
     associate: models => {
       // 1 to many with campground_checklist
       User.hasMany(models.Campground_checklist, {
-        foreignKey: 'campground_checklist',
+        foreignKey: 'checklist',
       });
       return Campground_checklist;
     }
