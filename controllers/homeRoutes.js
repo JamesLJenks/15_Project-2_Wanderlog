@@ -3,12 +3,36 @@ const sequelize = require('../config/connection');
 const { Campground_Post, Trail_Post, Campground_Checklist, Trail_Checklist, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+router.get('/camp-form', (req, res) => {
+    res.render("camp-form") 
+})
+
+router.get('/camp-post', (req, res) => {
+    res.render("camp-post") 
+})
+
 router.get('/choose-path', (req, res) => {
     res.render("choose-path")
 })
 
-router.get('/camp-form', (req, res) => {
-    res.render("camp-form") 
+router.get('/global-dashboard', (req, res) => {
+    res.render("global-dashboard") 
+})
+
+router.get('/login', (req, res) => {
+    res.render("login") 
+})
+
+router.get('/signup', (req, res) => {
+    res.render("signup") 
+})
+
+router.get('/trail-form', (req, res) => {
+    res.render("trail-form") 
+})
+
+router.get('/trail-post', (req, res) => {
+    res.render("trail-post") 
 })
 
 router.get("/user-dashboard", (req, res)=> {
