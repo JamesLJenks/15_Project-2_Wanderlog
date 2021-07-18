@@ -36,6 +36,11 @@ Trailpost.init(
         type: DataTypes.STRING,
         allowNull: false
       },
+      //was not originally in code should be included commenting out for now
+      //title: {
+        //type: DataTypes.STRING,
+        //allowNull: false
+      //},
       userStory: {
         type: DataTypes.STRING,
         allowNull: false
