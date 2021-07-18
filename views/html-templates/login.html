@@ -16,7 +16,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-custom navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-    <a href="#"><img src="/public/assets/icons/Wanderlog-Lettermark_Reverse.svg" alt="Wanderlog W Logo" class="logo mx-3 grow"></a>
+    <a href="#home"><img src="/public/assets/icons/Wanderlog-Lettermark_Reverse.svg" alt="Wanderlog W Logo" class="logo mx-3 grow"></a>
     <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="Search"
         aria-label="Search for a camping or trail experience">
@@ -35,7 +35,7 @@
         </li>
         <li class="nav-item px-2">
           <a class="nav-link" href="#" target="_blank">
-            <button class="btn btn-primary custom-btn navbar-button my-2 mx-3 text-nowrap" type="submit"><img width="10px"
+            <button class="btn btn-primary navbar-button my-2 mx-3 text-nowrap" type="submit"><img width="10px"
                 src="/public/assets/icons/plus-reverse.svg" /> Add New Adventure</button>
           </a>
         </li>
@@ -46,22 +46,34 @@
 
   <!-- Main Content -->
   <main class="col-auto">
+    <!-- Video Background -->
+    <div class="video-background">
+        <div class = "video-wrap">
+            <div id="video">
+                <video id="bgvid" autoplay loop muted playsinline>
+                    <source src="/public/assets/Walk-in-the-Woods-Reduced.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+    <!-- Content -->
     <div class="jumbotron jumbotron-fluid d-flex align-items-center vh-100 landing-page-content">
         <div class = "col-lg-3 col-md-2"></div>
         <div class="container">
-            <div class="row justify-content-center mx-5 my-5">
-                <img src="/public/assets/Wanderlog-Logo_Reverse.png" alt="Wanderlog Logo" class="col-lg-8 img-fluid my-3">
-                <h2 class="lead text-white text-center">Your camping and hiking guestbook.<h2>
+            <div class="row justify-content-center mx-5 my-3">
+                <h1 class="text-white text-center">Login<h1>
             </div>
             <div class="text-center mx-5">
-                <div class="form-group mb-4">
-                    <input type="text" class="form-control rounded" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Search for a camping or trail experience">
+                <div class="mb-4">
+                    <div class="mb-4">
+                        <input id="username-input" type="text" class="form-control rounded my-3" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Username">
+                        <input id="password-input" type="text" class="form-control rounded my-3" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Password">
+                    </div>
                 </div>
-                <a class="col-lg-6 col-12 btn custom-btn btn-primary btn-lg btn-block" href="/views/global-dashboard" role="button">Wander!</a>
-            </div>
-            <div class="text-center my-5">
-                <a class="col-lg-2 col-3 btn custom-btn btn-primary btn-block mx-2 grow" href="/login" role="button">Login</a>
-                <a class="col-lg-2 col-3 btn custom-btn btn-primary btn-block mx-2 grow" href="/signup" role="button">Sign Up</a>
+                <a class="col-lg-6 col-12 btn custom-btn btn-primary btn-lg btn-block" href="#" role="button">Login</a>
+                <div class="container my-5">
+                    <p class="text-white">Need to sign up? <a class="link grow text-white" href="#signup"><u>Create an account!</u></a></p>
+                </div>
             </div>
         </div>
         <div class = "col-lg-3 col-md-2"></div>

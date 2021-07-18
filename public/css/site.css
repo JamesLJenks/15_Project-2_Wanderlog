@@ -1,36 +1,83 @@
 /* Adobe Typekit Web Fonts */
 @import url("https://use.typekit.net/jnf7bws.css");
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: nimbus-sans, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-family: pauline, sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    color: #BC6C25;
+}
+
+h2 {
+    font-family: nimbus-sans, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+  
+h3 {
+    font-family: nimbus-sans, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+  
+h4 {
+    font-family: nimbus-sans, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+  
+h5 {
+    font-family: nimbus-sans, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #BC6C25;
+}
+  
+h6 {
+    font-family: nimbus-sans, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+p {
+    font-family: nimbus-sans, sans-serif;
+}
+
+.grow { 
+    transition: all .1s ease-in-out; 
+}
+
+.grow:hover { 
+    transform: scale(1.1);
+    transition: all .1s ease-in-out; 
+}
+
 /* Main Navbar */
 .navbar-custom {
     background-color: #00aba7;
-    color: white;
 }
 
 .logo {
     width: 4rem;
 }
 
-/* Site Custom Button */
-.custom-btn {
-    background-color: #00aba7;
-    border: none;
-}
-
-.custom-btn:hover {
-    background-color: #006160;
-    color: white;
-    border: none;
-    transform: scale(1.025);
-}
-
-.custom-btn:active {
-    background-color: #006160;
-    border: none;
-}
-
-.form-inline {
-    display: inherit;
+.menu-text:hover {
+    color: lightgray;
 }
 
 /* Add New Adventure Button */
@@ -44,7 +91,7 @@
     background-color: #003f3e;
     color: white;
     border: none;
-    transform: scale(1.025);
+    transform: scale(1.05);
 }
 
 .navbar-button:active {
@@ -52,19 +99,28 @@
     border: none;
 }
 
-.plus-icon {
-    width: 0.75rem;
+/* Site Custom Button */
+.custom-btn {
+    background-color: #00aba7;
+    border: none;
+}
+
+.custom-btn:hover {
+    background-color: #006160;
+    color: white;
+    border: none;
+    transform: scale(1.05);
+    transition: all .1s ease-in-out; 
+}
+
+.custom-btn:active {
+    background-color: #006160;
+    border: none;
 }
 
 /* Star Ratings */
-
 .checked {
     color: #BC6C25;
-}
-
-body {
-    overflow-x: hidden;
-    font-family: nimbus-sans, sans-serif;
 }
 
 .landing-page-content {
@@ -72,6 +128,7 @@ body {
     width: 100vw;
 }
 
+/* Heroes */
 .video-background {
     position: absolute;
     width: 100%;
@@ -79,14 +136,73 @@ body {
     background-color: rgba(00, 0, 0, 0.6);
 }
 
+.hero-background-image {
+    object-fit: cover;
+    min-height: 100vh;
+    background-color: rgba(00, 0, 0, 0.6);
+}
+
+/* Forms and Inputs */
 input[type="text"]::placeholder {                 
     /* Firefox, Chrome, Opera */
     text-align: center;
-    color: #BC6C25;
+    color: gray;
 }
 
-h1 {
-    font-family: pauline, sans-serif;
-    font-weight: bold;
-    font-size: 4rem;
+.form-inline {
+    display: inherit;
 }
+
+/* Tan page background */
+.tan-background {
+    background-color: #F8EEE1;
+}
+
+/* Adds padding to the top of pages with content so that the navbar does not obstruct the view. */
+.page-content-padding {
+    padding-top: 15vh;
+}
+
+.camp-post-card {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+/* Fills parent container with image */
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
+/* For post cards */
+.like-container {
+    background-color: #00ABA7;
+    width: 50%;
+    height: 15%;
+    border-radius: 5rem;
+    display: block;
+    text-align: center;
+    position: relative;
+    margin: -1.5rem 0 1.5rem -1.25rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    border: 2px solid var(--gin);
+    transition: all 0.5s ease-in-out;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .page-content-padding {
+        padding-top: 10vh;
+    }
+}
+
