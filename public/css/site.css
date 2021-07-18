@@ -8,6 +8,8 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
     font-family: nimbus-sans, sans-serif;
 }
@@ -184,20 +186,34 @@ input[type="text"]::placeholder {
 /* For post cards */
 .like-container {
     background-color: #00ABA7;
-    width: 50%;
-    height: 15%;
+    width: max-content;
+    height: 11%;
     border-radius: 5rem;
     display: block;
     text-align: center;
     position: relative;
-    margin: -1.5rem 0 1.5rem -1.25rem;
+    display: flex;
+    align-items: center;
+    margin: -1.75rem 0 1.5rem -1.25rem;
     padding: 0.5rem 1rem;
     color: white;
-    border: 2px solid var(--gin);
     transition: all 0.5s ease-in-out;
 }
 
+.icon {
+    width: 3rem;
+}
 
+hr {
+    border: 0 none;
+    height: 1px;
+    background-color: #BC6C25;
+    color: #BC6C25;
+}
+
+.custom-dropdown {
+    color: gray;
+}
 
 
 @media screen and (max-width: 768px) {
