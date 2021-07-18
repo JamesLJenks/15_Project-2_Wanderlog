@@ -41,6 +41,7 @@ h4 {
     font-family: nimbus-sans, sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
+    color: #BC6C25;
 }
   
 h5 {
@@ -215,6 +216,9 @@ hr {
     color: gray;
 }
 
+.form-check-input {
+    color: #00ABA7;
+}
 
 @media screen and (max-width: 768px) {
     .page-content-padding {
