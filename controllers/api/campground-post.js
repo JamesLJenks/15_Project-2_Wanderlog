@@ -114,6 +114,7 @@ router.put('/campground_post:id', withAuth, (req, res) => {
     });
 });
 
+//Delete Trail Post
 router.delete('/campground_post:id', withAuth, (req, res) => {
     Campground_post.destroy({
         where: {
