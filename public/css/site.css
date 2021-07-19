@@ -166,9 +166,22 @@ input[type="text"]::placeholder {
     padding-top: 15vh;
 }
 
+.post-page-padding {
+    padding-top: 10vh;
+}
+
+.post-header {
+    padding-top: 8vh;
+}
+
 .camp-post-card {
     background-color: rgba(255, 255, 255, 0);
     border: none;
+}
+
+.checklist-background {
+    background-color: #006160;
+    padding: 2rem;
 }
 
 /* Fills parent container with image */
@@ -218,6 +231,10 @@ hr {
 
 .form-check-input {
     color: #00ABA7;
+}
+
+.comment-background {
+    background-color: #F8EEE1;
 }
 
 @media screen and (max-width: 768px) {
