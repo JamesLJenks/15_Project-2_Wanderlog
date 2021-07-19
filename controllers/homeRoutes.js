@@ -86,6 +86,9 @@ router.get("/user-dashboard", (req, res)=> {
 
 
 
+
+
+
 //make routes for remaining handlebar files
 
 router.get('/', (req, res) => {
