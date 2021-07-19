@@ -1,53 +1,125 @@
-
-<div class="container">
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
-            <div class="row">
-                <div class="col-4">
-                    <!-- thumbnail here -->
-                </div>
-                <div class="col-8">
-                    <h1>User Post Title</h1>
-                    <p>Date Range | Campground Name | City, State</p>
-                    <p>Published by {{firstname}} {{lastname}} on {{createdAt}}</p>
-                    <!-- button or toggle switch here for draft/publish -->
-                    <p>Comfort Scale *rating insert here*</p>
+<main class="post-page-padding tan-background">
+    <div class="container-fluid post-header mb-5">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="fill">
+                            {{!-- <img src="{{this.image}}" alt="..."> --}}
+                            <img src="https://picsum.photos/id/237/320/240" alt="" />
+                        </div>
+                        <div class="like-container container-fluid d-flex align-items-center px-3">
+                            <img src="/assets/icons/like-default.svg" />
+                            <h5 class="text-white mx-2 py-4">100</h5>
+                        </div>
+                    </div>
+                    <div class="col-8 px-5">
+                        <h1>User Post Title</h1>
+                        <a class="btn custom-btn btn-primary btn-sm" href="#" role="button">Edit Post</a>
+                        <p>Published by {{firstname}} {{lastname}} on {{createdAt}}</p>
+                        <h6>Trip Dates: </h6>
+                        <h6>Campground Name: </h6>
+                        <h6>Location: </h6>
+                        <h6>Comfort Scale *rating insert here*</h6>
+                    </div>
                 </div>
             </div>
+            <div class="col-lg-2"></div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
-            <div class="row">
-                <div class="col-4">
-                    <div class="checklist">
-                        <!-- info section here (camping checklist) align to left-->
-                    </div>
-                    <div class="col-8">
-
-                       <!-- blog post here using quill editor on form page -->
-                        
-                        
-
-
-                        {{#each comment}}
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title">User Name</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Date</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up
-                                    the
-                                    bulk of the
-                                    card's content.</p>
-                            </div>
+    <div class="container-fluid bg-white py-5">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-4 text-white checklist-background">
+                        <div>
+                            <h4 class="text-white mb-4">Campground Info</h4>
+                            <h6>Terrain</h6>
+                            <ul>
+                                <li>Checklist Item</li>
+                                <li>Checklist Item</li>
+                                <li>Checklist Item</li>
+                            </ul>
+                            <h6>Amenities</h6>
+                            <ul>
+                                <li>Checklist Item</li>
+                                <li>Checklist Item</li>
+                                <li>Checklist Item</li>
+                            </ul>
+                            <h6>Accommodations</h6>
+                            <ul>
+                                <li>Checklist Item</li>
+                                <li>Checklist Item</li>
+                                <li>Checklist Item</li>
+                            </ul>
+                            <h6>Recreation</h6>
+                            <ul>
+                                <li>Checklist Item</li>
+                                <li>Checklist Item</li>
+                                <li>Checklist Item</li>
+                            </ul>
                         </div>
-                        {{/each}}
                     </div>
+                    <div class="col-8 px-5">
+                        <p>I’m baby pok pok vegan butcher hexagon food truck tofu mixtape offal prism tbh paleo freegan.
+                            Letterpress selvage tilde lomo fixie pour-over kale chips glossier wayfarers tacos hashtag
+                            mixtape intelligentsia. 3 wolf moon trust fund af, chia before they sold out cornhole put a
+                            bird on it enamel pin polaroid fam chicharrones tofu street art copper mug. Viral forage
+                            ennui flannel deep v leggings marfa hammock vinyl dreamcatcher pour-over waistcoat
+                            single-origin coffee selfies. Trust fund meh cred hammock vape 3 wolf moon.
+
+                            Deep v dreamcatcher cardigan ennui pok pok live-edge swag. Church-key typewriter bushwick
+                            ennui, 3 wolf moon vice hammock literally etsy kombucha godard meditation pickled
+                            letterpress. Kogi Brooklyn retro jean shorts squid. Skateboard viral cred aesthetic sriracha
+                            glossier, normcore swag XOXO la croix locavore. Put a bird on it art party raclette prism
+                            green juice tbh PBR&B pinterest microdosing leggings succulents.
+
+                            Pickled lo-fi activated charcoal next level umami, raw denim lyft +1 master cleanse hashtag
+                            fashion axe letterpress echo park retro normcore. Narwhal copper mug mumblecore enamel pin
+                            dreamcatcher cronut meh sartorial Brooklyn next level intelligentsia four dollar toast
+                            portland. Bespoke drinking vinegar ugh tattooed schlitz wayfarers. Prism tacos kitsch blog
+                            aesthetic normcore.
+
+                            Put a bird on it helvetica tbh taiyaki poutine. Lo-fi hell of affogato post-ironic
+                            mumblecore church-key single-origin coffee tacos chambray bespoke pickled selfies. Narwhal
+                            yuccie vaporware bitters ethical franzen cold-pressed aesthetic banh mi heirloom selfies
+                            banjo unicorn migas. You probably haven’t heard of them edison bulb cornhole, raw denim
+                            poutine tilde +1 gluten-free shoreditch shabby chic swag palo Santo. Tousled asymmetrical
+                            next level jean shorts four dollar toast pork belly helvetica hell of umami health goth
+                            knausgaard gluten-free.
+
+                            Actually ugh sustainable, lo-fi shabby chic ethical af shoreditch franzen lumbersexual
+                            mustache retro. Man braid hashtag offal crucifix Austin knausgaard pickled raclette truffaut
+                            small batch VHS. Mumblecore poutine roof party, hella hot chicken keytar af pabst. Vape
+                            pabst meggings 8-bit lumbersexual pinterest, artisan la croix letterpress. Gochujang tofu
+                            skateboard, mustache taiyaki beard irony squid. Small batch pinterest venmo, hexagon yuccie
+                            master cleanse direct trade bitters kinfolk.
+
+                            Affogato man braid cliche swag. Raclette hashtag cold-pressed farm-to-table food truck DIY
+                            swag wayfarers cardigan waistcoat truffaut knausgaard authentic vice helvetica. Distillery
+                            raclette kitsch humblebrag fingerstache edison bulb. Seitan DIY narwhal, lumbersexual neutra
+                            salvia single-origin coffee distillery listicle williamsburg. Kogi crucifix lumbersexual
+                            authentic, fixie blue bottle microdosing occupy jean shorts gastropub put a bird on it
+                            franzen vinyl. Seitan typewriter shoreditch literally, master cleanse raw denim hoodie
+                            cornhole. Squid try-hard vaporware, tilde dreamcatcher kitsch health goth messenger bag
+                            gentrify umami.</p>
+                    </div>
+                    {{!-- {{#each comment}} --}}
+                    <h4 class="mt-5 text-center">Comments</h4>
+                    <div class="container comment-background my-4">
+                        <div class="card-body">
+                            <h5 class="card-title">User Name</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Date</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up
+                                the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                    {{!-- {{/each}} --}}
                 </div>
             </div>
+            <div class="col-lg-2"></div>
         </div>
-
-</html>
+    </div>
+</main>
