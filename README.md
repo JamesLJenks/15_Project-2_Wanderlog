@@ -11,7 +11,7 @@ As a user, I want to log my adventures in a efficient way that allows me to look
 
 # Project_links:
 
-Deployed application: {link}
+Deployed application: https://wanderlog-msu.herokuapp.com/
 Github repository: https://github.com/JamesLJenks/15_Project-2_Wanderlog
+Presentation: https://docs.google.com/presentation/d/12dbFhB0gv_nRnfW2FrJHGFlVsVjzXH5x-QdUXdppB-4/edit?usp=sharing
 
-{image link here}
