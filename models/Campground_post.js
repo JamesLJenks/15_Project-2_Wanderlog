@@ -5,7 +5,13 @@ const sequelize = require('../config/connection');
 class Campground_post extends Model {}
 
 Campground_post.init(
-  {
+  { 
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     published: {
       type: DataTypes.BOOLEAN,
       allowNull: false

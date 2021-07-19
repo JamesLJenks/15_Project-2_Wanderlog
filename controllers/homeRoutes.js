@@ -6,9 +6,108 @@ const withAuth = require('../utils/auth');
 router.get('/camp-form', (req, res) => {
     res.render("camp-form") 
 })
+//POST CAMP GROUND
+router.post('/camp-post', async (req, res) => {
+    try {
+        const dbCampData = await Campground_Post.create({
+            published: req.body.published,
+            tripStart: req.body.tripStart,
+            tripEnd: req.body.tripEnd,
+            campgroundName: req.body.campgroundName,
+            locationCity: req.body.locationCity,
+            locationState: req.body.locationState,
+            comfort: res.body.comfort,
+            title: res.body.title,
+            userStory: res.body.userStory,
+        });
+        req.session.save(() => {
+            req.session.loggedIn = true;
+      
+            res.status(200).json(dbUserData);
+          });
+        } catch (err) {
+          console.log(err);
+          res.status(500).json(err);
+        }
+    });
 
+//UPDATE CAMPGROUND POST
+router.put('/camp-post:id',(req, res) => {
+    Campground_Post.update({
+        published: req.body.published,
+        tripStart: req.body.tripStart,
+        tripEnd: req.body.tripEnd,
+        campgroundName: req.body.campgroundName,
+        locationCity: req.body.locationCity,
+        locationState: req.body.locationState,
+        comfort: res.body.comfort,
+        title: res.body.title,
+        userStory: res.body.userStory,
+    }, {
+        where: {
+            id: req.params.id
+      }})
+      .then(dbPostData => {
+            if (!dbPostData) {
+                res.status(404).json({ message: 'No post found with this id' });
+                return;
+            }
+            res.json(dbPostData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+
+})
+//DELETE POST
+router.delete('/camp-post:/id', (req,res) => {
+    Campground_Post.destroy({
+        where:{
+            id: req.params.id
+        }
+    }).then(dbPostData => {
+        if (!dbPostData) {
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+        }
+        res.json(dbPostData);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+
+// GET ALL CAMP-POSTS for
 router.get('/camp-post', (req, res) => {
-    res.render("camp-post") 
+    Campground_Post.findAll({
+        attributes: [
+            'published',
+            'tripStart',
+            'tripEnd',
+            'campgroundName',
+            'locationCity',
+            'locationState',
+            'comfort',
+            'title',
+            'userStory'
+        ],
+        include: [{
+            model:User,
+            attributes: ['username']
+        }
+    ]
+    })
+    .then(dbPostData => {
+        const posts = dbPostData.map(post => post.get({ plain: true }));
+        res.render("camp-post");
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+    
 })
 
 router.get('/choose-path', (req, res) => {
@@ -23,9 +122,6 @@ router.get('/landing-page', (req, res) => {
     res.render("landing-page") 
 })
 
-router.get('/login', (req, res) => {
-    res.render("login") 
-})
 
 router.get('/signup', (req, res) => {
     res.render("signup") 
