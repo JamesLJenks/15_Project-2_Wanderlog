@@ -3,8 +3,9 @@ const { Campground_post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //GET all CAMPGROUND_POST for homepage
-router.get('/campground_post', withAuth, (req, res) => {
-    Campground_post.findAll({
+router.get('/campground_post', withAuth, async (req, res) => {
+    try {
+        const dbCampPostData = await Campground_post.findAll({
             where: {
                 user_id: req.session.user_id
             },
@@ -22,16 +23,19 @@ router.get('/campground_post', withAuth, (req, res) => {
                 'userStory',
                 'created_at'
             ],
+            include: [{
+                model: User,
+                attributes: ['username']
+            },
+            ]
         })
-        .then(dbPostData => {
-            const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('dashboard', { Campground_post, loggedIn: true });
-        })
-        .catch(err => {
+             const posts = dbCampPostData.map(post => post.get({ plain: true }));
+            res.render('dashboard', { posts, loggedIn: true });
+        } catch (err) {
             console.log(err);
             res.status(500).json(err);
-        });
-});
+          }
+    });
 
 //GET one CAMPGROUND_POST
 router.get('/campground_post:id', withAuth, (req, res) => {
