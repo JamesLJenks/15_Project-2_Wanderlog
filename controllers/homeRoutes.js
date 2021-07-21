@@ -21,9 +21,8 @@ router.post('/camp-post', async (req, res) => {
             userStory: res.body.userStory,
         });
         req.session.save(() => {
-            req.session.loggedIn = true;
-      
-            res.status(200).json(dbUserData);
+            req.session.loggedIn = true;      
+            res.status(200).json(dbCampData);
           });
         } catch (err) {
           console.log(err);
@@ -80,35 +79,70 @@ router.delete('/camp-post:/id', (req,res) => {
 
 
 // GET ALL CAMP-POSTS for
-router.get('/camp-post', (req, res) => {
-    Campground_Post.findAll({
-        attributes: [
-            'published',
-            'tripStart',
-            'tripEnd',
-            'campgroundName',
-            'locationCity',
-            'locationState',
-            'comfort',
-            'title',
-            'userStory'
+router.get('/camp-post', async (req, res) => {
+    try {
+      const dbCampPostData = await Campground_Post.findAll({
+        include: [
+          {
+            model: Campground_post,
+            attributes: [
+                            'id',
+                            'published',
+                            'tripStart',
+                            'tripEnd',
+                            'campgroundName',
+                            'locationCity',
+                            'locationState',
+                            'comfort',
+                            'title',
+                            'userStory'
+                        ],
+            }
         ],
-        include: [{
-            model:User,
-            attributes: ['username']
-        }
-    ]
-    })
-    .then(dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render("camp-post");
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+      });
+  
+      const campposts = dbCampPostData.map((campposts) =>
+        campposts.get({ plain: true })
+      );
+  
+      res.render('camp-post', {
+        campposts,
+        loggedIn: req.session.loggedIn,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+// router.get('/camp-post', (req, res) => {
+//     Campground_Post.findAll({
+//         attributes: [
+//             'published',
+//             'tripStart',
+//             'tripEnd',
+//             'campgroundName',
+//             'locationCity',
+//             'locationState',
+//             'comfort',
+//             'title',
+//             'userStory'
+//         ],
+//         include: [{
+//             model:User,
+//             attributes: ['username']
+//         }
+//     ]
+//     })
+//     .then(dbPostData => {
+//         const posts = dbPostData.map(post => post.get({ plain: true }));
+//         res.render("camp-post");
+//     })
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     });
     
-})
+// })
 
 router.get('/choose-path', (req, res) => {
     res.render("choose-path")

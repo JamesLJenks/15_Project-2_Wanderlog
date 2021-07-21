@@ -1,7 +1,8 @@
+console.log("***************** Creating our Campground Post model *****************")
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-
+//Create our Campground Post model
 class Campground_post extends Model {}
 
 Campground_post.init(
@@ -11,6 +12,7 @@ Campground_post.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+            
     },
     published: {
       type: DataTypes.BOOLEAN,
@@ -51,6 +53,13 @@ Campground_post.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    }
   //   associate: models => {
   //     // 1 to many with campground_checklist
   //     User.hasMany(models.Campground_checklist, {
@@ -62,6 +71,7 @@ Campground_post.init(
   {
     sequelize,
     timestamps: true,
+    freezeTableName: true,
     underscored: true,
     modelName: 'campground_post'
   }

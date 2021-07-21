@@ -8,5 +8,7 @@ const commentRoutes = require('./comment-routes');
 router.use('/users', userRoutes);
 router.use('/posts', postRoutes);
 router.use('/comments', commentRoutes);
+router.use('/campground_post_routes' , campground_post_routes);
+
 
 module.exports = router;
