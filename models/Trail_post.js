@@ -1,3 +1,4 @@
+console.log('********** CREATING OUR TRAIL POST MODEL ************')
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 

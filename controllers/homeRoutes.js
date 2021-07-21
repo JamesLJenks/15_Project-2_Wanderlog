@@ -1,15 +1,148 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Campground_Post, Trail_Post, Campground_Checklist, Trail_Checklist, User, Comment } = require('../models');
+const { Campground_Post, Trail_Post, Campground_Checklist, Trail_Checklist, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/camp-form', (req, res) => {
     res.render("camp-form") 
 })
+//POST CAMP GROUND
+router.post('/', async (req, res) => {
+    try {
+        const dbCampData = await Campground_Post.create({
+            published: req.body.published,
+            tripStart: req.body.tripStart,
+            tripEnd: req.body.tripEnd,
+            campgroundName: req.body.campgroundName,
+            locationCity: req.body.locationCity,
+            locationState: req.body.locationState,
+            comfort: res.body.comfort,
+            title: res.body.title,
+            userStory: res.body.userStory,
+        });
+        req.session.save(() => {
+            req.session.loggedIn = true;      
+            res.status(200).json(dbCampData);
+          });
+        } catch (err) {
+          console.log(err);
+          res.status(500).json(err);
+        }
+    });
 
-router.get('/camp-post', (req, res) => {
-    res.render("camp-post") 
+//UPDATE CAMPGROUND POST
+router.put('/camp-post:id',(req, res) => {
+    Campground_Post.update({
+        published: req.body.published,
+        tripStart: req.body.tripStart,
+        tripEnd: req.body.tripEnd,
+        campgroundName: req.body.campgroundName,
+        locationCity: req.body.locationCity,
+        locationState: req.body.locationState,
+        comfort: res.body.comfort,
+        title: res.body.title,
+        userStory: res.body.userStory,
+    }, {
+        where: {
+            id: req.params.id
+      }})
+      .then(dbPostData => {
+            if (!dbPostData) {
+                res.status(404).json({ message: 'No post found with this id' });
+                return;
+            }
+            res.json(dbPostData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+
 })
+//DELETE POST
+router.delete('/camp-post:/id', (req,res) => {
+    Campground_Post.destroy({
+        where:{
+            id: req.params.id
+        }
+    }).then(dbPostData => {
+        if (!dbPostData) {
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+        }
+        res.json(dbPostData);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+
+// GET ALL CAMP-POSTS for
+router.get('/camp-post', async (req, res) => {
+    try {
+      const dbCampPostData = await Campground_Post.findAll({
+        include: [
+          {
+            model: Campground_Post,
+            attributes: [
+                            'id',
+                            'published',
+                            'tripStart',
+                            'tripEnd',
+                            'campgroundName',
+                            'locationCity',
+                            'locationState',
+                            'comfort',
+                            'title',
+                            'userStory'
+                        ],
+            }
+        ],
+      });
+  
+      const campposts = dbCampPostData.map((campposts) =>
+        campposts.get({ plain: true })
+      );
+  
+      res.render('camp-post', {
+        campposts,
+        loggedIn: req.session.loggedIn,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+// router.get('/camp-post', (req, res) => {
+//     Campground_Post.findAll({
+//         attributes: [
+//             'published',
+//             'tripStart',
+//             'tripEnd',
+//             'campgroundName',
+//             'locationCity',
+//             'locationState',
+//             'comfort',
+//             'title',
+//             'userStory'
+//         ],
+//         include: [{
+//             model:User,
+//             attributes: ['username']
+//         }
+//     ]
+//     })
+//     .then(dbPostData => {
+//         const posts = dbPostData.map(post => post.get({ plain: true }));
+//         res.render("camp-post");
+//     })
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     });
+    
+// })
 
 router.get('/choose-path', (req, res) => {
     res.render("choose-path")
@@ -23,9 +156,6 @@ router.get('/landing-page', (req, res) => {
     res.render("landing-page") 
 })
 
-router.get('/login', (req, res) => {
-    res.render("login") 
-})
 
 router.get('/signup', (req, res) => {
     res.render("signup") 
@@ -160,47 +290,6 @@ router.get('/', (req, res) => {
 //             res.status(500).json(err);
 //         });
 // });
-router.get('/edit/:id', withAuth, (req, res) => {
-    Post.findOne({
-            where: {
-                id: req.params.id
-            },
-            attributes: ['id',
-                'title',
-                'content',
-                'created_at'
-            ],
-            include: [{
-                    model: User,
-                    attributes: ['username']
-                },
-                {
-                    model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
-                }
-            ]
-        })
-        .then(dbPostData => {
-            if (!dbPostData) {
-                res.status(404).json({ message: 'No post found with this id' });
-                return;
-            }
-
-            const post = dbPostData.get({ plain: true });
-            res.render('edit-post', { post, loggedIn: true });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-})
-router.get('/new', (req, res) => {
-    res.render('user-dashboard');
-});
 
 
 
