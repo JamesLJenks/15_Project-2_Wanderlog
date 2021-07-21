@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Campground_Post, Trail_Post, Campground_Checklist, Trail_Checklist, User, Comment } = require('../models');
+const { Campground_Post, Trail_Post, Campground_Checklist, Trail_Checklist, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/camp-form', (req, res) => {
     res.render("camp-form") 
 })
 //POST CAMP GROUND
-router.post('/camp-post', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const dbCampData = await Campground_Post.create({
             published: req.body.published,
@@ -84,7 +84,7 @@ router.get('/camp-post', async (req, res) => {
       const dbCampPostData = await Campground_Post.findAll({
         include: [
           {
-            model: Campground_post,
+            model: Campground_Post,
             attributes: [
                             'id',
                             'published',
@@ -290,47 +290,6 @@ router.get('/', (req, res) => {
 //             res.status(500).json(err);
 //         });
 // });
-router.get('/edit/:id', withAuth, (req, res) => {
-    Post.findOne({
-            where: {
-                id: req.params.id
-            },
-            attributes: ['id',
-                'title',
-                'content',
-                'created_at'
-            ],
-            include: [{
-                    model: User,
-                    attributes: ['username']
-                },
-                {
-                    model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
-                }
-            ]
-        })
-        .then(dbPostData => {
-            if (!dbPostData) {
-                res.status(404).json({ message: 'No post found with this id' });
-                return;
-            }
-
-            const post = dbPostData.get({ plain: true });
-            res.render('edit-post', { post, loggedIn: true });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-})
-router.get('/new', (req, res) => {
-    res.render('user-dashboard');
-});
 
 
 

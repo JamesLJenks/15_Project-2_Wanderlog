@@ -1,15 +1,15 @@
 console.log("******** EXECUTING models/index.js **********") ;
 const CampgroundChecklist = require('./Campground_checklist');
-const CampgroundPost = require('./Campground_post');
+const Campground_Post = require('./Campground_post');
 const CampgroundComment = require('./CampgroundComment');
 const TrailChecklist = require('./Trail_checklist');
 const TrailPost = require('./Trail_post');
 const User = require('./User');
 
-User.hasMany(CampgroundPost, {
+User.hasMany(Campground_Post, {
     foreignKey: 'user_id'
 });
-CampgroundPost.belongsTo(User,{
+Campground_Post.belongsTo(User,{
     foreignKey: 'user_id',
     onDelete: "cascade"
 });
@@ -54,4 +54,4 @@ CampgroundPost.belongsTo(User,{
 
 
 
-module.exports = {CampgroundPost,TrailPost,User}
+module.exports = {Campground_Post,TrailPost,User}
