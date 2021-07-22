@@ -11,8 +11,7 @@ Campground_post.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
-            
+      autoIncrement: true,            
     },
     published: {
       type: DataTypes.BOOLEAN,

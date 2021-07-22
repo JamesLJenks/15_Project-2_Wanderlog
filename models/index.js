@@ -13,21 +13,21 @@ Campground_Post.belongsTo(User,{
     foreignKey: 'user_id',
     onDelete: "cascade"
 });
-// CampgroundComment.belongsTo(User, {
-//     foreignKey: 'user_id',
-//     onDelete: "cascade"
-// });
-// CampgroundComment.belongsTo(CampgroundPost, {
-//     foriegnKey: 'post_id',
-//     onDelete: "cascade"
-// });
-// User.hasMany(CampgroundComment, {
-//     foreignKey: 'user_id',    
-// });
-// CampgroundPost.hasMany(CampgroundComment, {
-//     foreignKey: 'post_id',
-//     onDelete: "cascade"
-// });
+CampgroundComment.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: "cascade"
+});
+CampgroundComment.belongsTo(Campground_Post, {
+    foriegnKey: 'post_id',
+    onDelete: "cascade"
+});
+User.hasMany(CampgroundComment, {
+    foreignKey: 'user_id',    
+});
+Campground_Post.hasMany(CampgroundComment, {
+    foreignKey: 'post_id',
+    onDelete: "cascade"
+});
 // User.hasMany(TrailPost, {
 //     foreignKey: 'user_id'
 // });
@@ -54,4 +54,4 @@ Campground_Post.belongsTo(User,{
 
 
 
-module.exports = {Campground_Post,TrailPost,User}
+module.exports = {Campground_Post,CampgroundComment,TrailPost,User}
