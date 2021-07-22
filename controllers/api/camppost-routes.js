@@ -1,44 +1,15 @@
 const router = require('express').Router();
-const { Campground_post } = require('../../models');
+const { Campground_post, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //GET all CAMPGROUND_POST for homepage
-router.get('/campground_post', withAuth, async (req, res) => {
-    try {
-        const dbCampPostData = await Campground_post.findAll({
-            where: {
-                user_id: req.session.user_id
-            },
-            attributes: [
-                'id',
-                'title',
-                'published',
-                'tripStart',
-                'tripEnd',
-                'campgroundName',
-                'locationCity',
-                'locationState',
-                'comfort',
-                'title',
-                'userStory',
-                'created_at'
-            ],
-            include: [{
-                model: User,
-                attributes: ['username']
-            },
-            ]
-        })
-             const posts = dbCampPostData.map(post => post.get({ plain: true }));
-            res.render('dashboard', { posts, loggedIn: true });
-        } catch (err) {
-            console.log(err);
-            res.status(500).json(err);
-          }
-    });
+router.get('/', async (req, res) => {
+    console.log("******** EXECUTING FIND ALL CAMPPOSTS ********")
+    Campground_post.findAll({
 
+    })
 //GET one CAMPGROUND_POST
-router.get('/campground_post:id', withAuth, (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
     Campground_post.findOne({
             where: {
                 user_id: req.session.user_id
@@ -67,9 +38,10 @@ router.get('/campground_post:id', withAuth, (req, res) => {
             res.status(500).json(err);
         });
     });
+});
 
 //POST CAMPGROUND_POST Data
-router.post('/campground_post', withAuth, (req, res) => {
+router.post('/', withAuth, (req, res) => {
            Campground_post.create({
                published: req.body.published,
                tripStart: req.body.tripStart,
@@ -94,7 +66,7 @@ router.post('/campground_post', withAuth, (req, res) => {
     });
 
 // Update Campground Post
-router.put('/campground_post:id', withAuth, (req, res) => {
+router.put(':id', withAuth, (req, res) => {
     Campground_post.put(
         {
         title: req.body.title,
